@@ -1,0 +1,1777 @@
+body {
+    font-family: Arial;
+    background-color: #DCDCDC;
+    text-align: center;
+}
+
+
+#bracelet{
+    width: 204px;
+    margin-left:40%;
+    position: absolute;
+    z-index: 1;
+    display: inline-block;
+    margin-top: 0;
+    top:0;
+}
+
+.btn {
+    cursor: pointer;
+    color:  #303030;
+    position: absolute;
+    display: block;
+    border-radius: 10px;
+    top:0;
+    background-color: black;
+    width: 11px;
+    height: 35px;
+    margin-top: 315px;
+}
+
+#backbutton {
+    margin-left:392px;
+    color:black;
+}
+
+#lockbutton{
+    margin-left:170px;
+    color:black;
+}
+
+#fav{
+    display:none;
+    color:white;
+    position: absolute;
+    top:0px;
+    left:0px;
+    z-index:7;
+    width:190px;
+    height:212px;
+    background-color: #e2c8b3;
+    text-align: center;
+    float: left;
+    overflow:hidden;
+}
+
+#removeFav{
+    display:none;
+    color:white;
+    position: absolute;
+    z-index:7;
+    top:40px;
+    margin-right:0px;
+    width:35px;
+    height:150px;
+}
+
+#favouritesmenu{
+    overflow-y: hidden;
+    height:150px;
+    font-size: 8pt;
+    font-weight: bold;
+}
+
+#removeX{
+    position: absolute;
+    margin-left: 160px;
+    margin-top: 6px;
+    height: 150px;
+    width: 30px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    font-size: 8pt;
+}
+
+.favtitle {
+    font-size:18px;
+    float: left;
+    margin-top:-32px;
+    color: #db8067;
+    margin-left: 15px;
+} 
+
+#favempty{
+    margin-bottom: 40px;
+    display:none;
+}
+
+
+#iGobox { 
+    margin-top: 300px;
+    margin-left: 180px;
+    width:190px;
+    height:210px;
+    text-align: center;
+    border:solid thick grey;
+    border-style: ridge;
+    border-width: 14px;
+    border-radius: 15px;
+    z-index:2;
+    position:absolute;
+
+}
+
+#hello{
+    display:block;
+    top: 10px;
+}
+
+#lockscreen {
+    cursor: pointer;
+    display: none;
+    margin-top: auto;
+    margin-left: auto;
+    width:190px;
+    height:210px;
+    position:absolute;
+    background: url('lockscreen.png');
+    background-size: cover;
+    z-index: 10;
+}
+
+#iGoWrapper {
+    position: relative;
+    width: 210px;
+    height: 100%;
+}
+
+#main {
+
+    background: #e2c8b3;
+    width:190px;
+    height:210px;     
+    position: absolute;
+
+}
+
+#firstupper {    
+    cursor:pointer;
+    margin-left: 10px;
+    margin-top:10px;
+    width:40px;
+    height:40px;
+    border-radius: 20%;
+    box-shadow: 0px 0px 2.5px 2.5px white;
+    background: #81B14F;
+    position: absolute;
+}
+#mytickets{
+    margin-top:8px;
+}
+
+ 
+#secondupper{   
+    position: absolute;
+    cursor:pointer;
+    margin-top:10px;
+    left:60px;
+    width:40px;
+    height:40px;
+    border-radius: 20%;
+    box-shadow: 0px 0px 2.5px 2.5px white;
+    background: #B2284E;
+}
+#favorites{
+    margin-top:8px;
+}
+
+
+#helpTickets {
+    position: absolute;
+    font-size: 4;
+    color: white;
+    cursor: pointer; 
+    width:20px;
+    height:24px;
+    border-radius: 50%;
+    box-shadow: 0px 0px 2.5px 2.5px;
+    background: #818e8d;
+    padding-right: 5px;
+    padding-left: 5px;
+    padding-top: 5px; 
+    top: 4px;
+    right: 5px;
+    z-index:4;
+}
+
+#firstmiddle {    
+   position: absolute;
+    cursor:pointer;
+    margin-left: 10px;
+    margin-top:90px;
+    width:40px;
+    height:40px;
+    border-radius: 50%;
+    box-shadow: 0px 0px 2.5px 2.5px black;
+    background: white;
+}
+#searchfriends{
+    margin-top:4px;
+}
+
+#searchText {
+    position: absolute;
+    height: 20px;
+    z-index: 1;
+    left: 34px;
+    top: 50px;
+    width: 120px;
+    border-radius: 20px;
+}
+
+#searchTextExt {
+    display: none;
+    position: absolute;
+    cursor:pointer;
+    height: 20px;
+    z-index: 1;
+    left: 250px;
+    top: 40px;
+    width: 132px;
+}
+
+#searchbtn{
+    position: absolute;
+    top: 48px;
+    left: 2px;
+    height: 30px;
+    width: 10px;
+    border-radius: 50%;
+    padding-right: 21px;
+}
+
+#micbtn{
+    position: absolute;
+    top: 48px;
+    left: 159px;
+    height: 30px;
+    width: 20px;
+    border-radius: 50%;
+    padding-right: 21px;
+    
+}
+
+.vertical-menu {
+  width: 190px; 
+}
+
+.vertical-menu a {
+  display: block;
+  padding: 10px;
+  text-decoration: none; 
+  background-color:#db8067; 
+  color: black;
+  border-collapse: separate;
+  border-spacing: 10px;
+
+}
+
+.vertical-menu a:hover {
+  background-color: white; 
+}
+
+.vertical-menu a.active {
+  background-color: #4CAF50; 
+  color: white;
+}
+
+#empty{
+    font:18;
+    position: absolute;
+    top: 80px;
+    left: 75px;
+}
+
+#emptyM{
+    font:18;
+    position: absolute;
+    top: 80px;
+    left: 50px;
+}#emptyT{
+    font:18;
+    position: absolute;
+    top: 80px;
+    left: 50px;
+}#emptyB{
+    font:18;
+    position: absolute;
+    top: 80px;
+    left: 50px;
+}#emptyE{
+    font:18;
+    position: absolute;
+    top: 80px;
+    left: 50px;
+}
+
+#clearE{
+    position: absolute;
+    left: -125px;
+    top: 8px;
+    width: 55px;
+    border-radius: 15px;
+    padding-top: 5px;
+    background-color: gray;
+    color: black;
+    font-size: 12px;
+        box-shadow: 0px 0px 2.5px 2.5px white;
+
+}
+
+#virg{
+        color: gray;
+
+}
+
+#searchMenu{
+    display: none;
+    position: absolute;
+    z-index:11;
+    background: #e2c8b3;
+    width:190px;
+    height:210px;     
+    color:white;
+    text-align: left;
+    font-size: 10pt;
+}
+
+.voicePOP {
+    display:none;
+    color:white;
+    position: absolute;
+    z-index:15;
+    width:190px;
+    height: 210px;
+    top:0;
+    background-color: rgba(102,124,127,0.8);
+    text-align: center;
+}
+
+#voiceSpeak {
+    width: 150px;
+    background-color: #db8067;
+    padding: 10px;
+    border-radius: 10%;
+    margin-left: 10px;
+    margin-top:50%;
+    z-index: 16;
+}
+
+#voiceMenu{
+    z-index: 15;
+}
+
+#secondmiddle {   
+    position: absolute;
+    cursor:pointer;
+    margin-top:80px;
+    left:65px;
+    width:60px;
+    height:60px;
+    border-radius: 50%;
+    box-shadow: 0px 0px 2.5px 2.5px white;
+    background: black;
+}
+#searchclassic{
+    margin-top:12px;
+}
+
+#thirdmiddle {
+    position: absolute;
+    cursor:pointer;
+    margin-left: 140px;
+    margin-top:90px;
+    width:40px;
+    height:40px;
+    border-radius: 50%;
+    box-shadow: 0px 0px 2.5px 2.5px black;
+    background: white;
+}
+#searchmap{
+    margin-top:6px;
+}
+
+
+
+#firstdown {    
+    position: absolute;
+    cursor:pointer;
+    margin-left: 90px;
+    margin-top:160px;
+    width:40px;
+    height:40px;
+    border-radius: 20%;
+    box-shadow: 0px 0px 2.5px 2.5px white;
+    background: gold;
+}
+#vouchers{
+    margin-top:6px;
+}
+
+#curCat{
+    position: absolute;
+    left: 89px;
+    top: 4px;
+    height: 30px;
+}
+
+ 
+#seconddown{   
+   position: absolute;
+    cursor:pointer;
+    margin-left: 140px;
+    margin-top:161px;
+    width:40px;
+    height:40px;
+    border-radius: 20%;
+    box-shadow: 0px 0px 2.5px 2.5px white;
+    background: cornflowerblue;
+}
+#transports{
+    margin-top:6px;
+}
+
+
+
+.upper {
+
+    text-align: center;
+}
+
+.middle {
+
+    text-align: center;
+}
+
+.down {
+
+    text-align: center;
+}
+
+
+#publictransports{
+    display: none;
+    position: absolute;
+    z-index:11;
+    background: #e2c8b3;
+    width:190px;
+    height:210px;     
+    color:white;
+    text-align: left;
+    font-size: 10pt;
+}
+
+.tpim {
+    position: absolute;
+    width:40px;
+    padding-left: 5px;
+    top:15px;
+}
+
+#closedet {
+    position: absolute;
+    color: #818e8d;
+    left:4px;
+    top:4px;
+    cursor: pointer; 
+    width:30px;
+    height:24px;
+    border-radius: 50%;
+    box-shadow: 0px 0px 2.5px 2.5px white;
+    background: #818e8d;
+    padding-top: 4px;
+    padding-bottom: 2px;
+    z-index:10;
+}
+
+
+#transportsPHelp {
+    display: none;
+    position: absolute;
+    background-color: rgba(102,124,127,0.8);
+    width:190px;
+    height:210px;
+    color:white;
+    text-align: left;
+    font-size: 10pt;
+    z-index: 14;
+
+}
+
+
+#helptrans {
+    position: absolute;
+    font-size: 8;
+    color: white;
+    cursor: pointer; 
+    width:20px;
+    height:24px;
+    border-radius: 50%;
+    box-shadow: 0px 0px 2.5px 2.5px;
+    background: #818e8d;
+    padding-left: 10px;
+    padding-top: 5px; 
+    top: 4px;
+    right: 5px;
+    z-index:4;
+}
+
+#closehelpM{
+    cursor: pointer;
+    width:40px;
+    margin-left:145px;
+    padding-bottom: 5px;
+    position:absolute;
+    z-index: 10;
+}
+
+#closehelpBT{
+    cursor: pointer;
+    width:40px;
+    margin-left:135px;
+    padding-bottom: 5px;
+    position:absolute;
+    margin-top: -10px;
+    z-index: 10;
+}
+
+#closebuying{
+    cursor: pointer;
+    width:40px;
+    margin-left:52px;
+    padding-bottom: 5px;
+    position:absolute;
+    z-index: 10;
+}
+
+
+
+#metro{
+    position: absolute;
+    left:40px;
+    color: white;
+    cursor: pointer; 
+    width:50px;
+    height:60px;
+    border-radius: 10%;
+    box-shadow: 0px 0px 2.5px 2.5px;
+    background:             rgb(204,204,0);
+    font-size: 10;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    z-index: 4;
+    margin-top: 136px;
+    left: 9px;
+    bottom: 75px;
+}
+
+#bus{
+    position: absolute;
+    left:40px;
+    color: white;
+    cursor: pointer; 
+    width:50px;
+    height:60px;
+    border-radius: 10%;
+    box-shadow: 0px 0px 2.5px 2.5px;
+    background:  rgb(204,204,0);
+    font-size: 10;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    z-index: 4;
+    margin-top: 136px;
+    left: 129px;
+    bottom: 75px;
+}
+
+#train {
+    position: absolute;
+    color: white;
+    cursor: pointer; 
+    width:50px;
+    height:60px;
+    border-radius: 10%;
+    box-shadow: 0px 0px 2.5px 2.5px;
+    background: rgb(204,204,0);
+    padding-top: 4px;
+    padding-bottom: 4px;
+    z-index: 4;
+    margin-top: 136px;
+    left: 70px;
+    bottom: 75px;
+
+}
+
+
+#pricesbtn{
+     position: absolute;
+    left:40px;
+    color: white;
+    cursor: pointer; 
+    width:110px;
+    height:15px;
+    border-radius: 10%;
+    box-shadow: 0px 0px 2.5px 2.5px;
+    background:  black;
+    font-size: 10;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    z-index: 4;
+    top: 68%;
+    left: 40px;
+    bottom: 75px; 
+    text-align:center;   
+}
+
+#prices {
+    display: none;
+    position: absolute;
+    z-index:3;
+    background-color: rgba(102,124,127,0.8);
+    width:190px;
+    height:212px;
+    color:white;
+    text-align: left;
+    font-size: 10pt;
+    z-index: 16;
+}
+
+#titlePrices{
+    color: black;
+}
+
+#innerprices{
+    width: 150px;
+    background-color: #db8067;
+    padding: 10px;
+    border-radius: 10%;
+    margin-left: 10px;
+    margin-top:5px;
+}
+
+.close {
+    cursor: pointer;
+    width:40px;
+    margin-left:135px;
+    padding-bottom: 5px;
+}
+
+#favclose{
+    z-index: 10;
+}
+
+#blacktitle{
+    color:black;
+}
+
+#buyTransportScreen {
+    display: none;
+    position: absolute;
+    z-index:11;
+    background: #e2c8b3;
+    width:190px;
+    height:210px;     
+    color:white;
+    text-align: left;
+    font-size: 10pt;
+
+}
+
+
+input[type=number]{
+    height: 20px;
+    width: 40px;
+    border-radius: 10%;
+    text-align:center;   
+} 
+
+.number-wrapper {
+  position: absolute;
+  top:25px;
+  left: 20px;
+}
+#buytransbtn{
+
+    background: green;
+    color: white;
+    cursor: pointer;
+    position: absolute;
+    left:40px;
+    color: white;
+    cursor: pointer; 
+    width:80px;
+    height:20px;
+    border-radius: 10%;
+    font-size: 10;
+    padding-top: 5px;
+    padding-bottom: 12px;
+    z-index: 4;
+    top:76%;
+    left: 95px;
+    bottom: 80px; 
+    text-align:center;   
+    box-shadow: 0px 0px 2.5px 2.5px;
+}
+
+
+
+#totalprice{
+
+    color: white;
+    position: absolute;
+    left:40px;
+    color: white;
+    cursor: pointer; 
+    width:80px;
+    height:20px;
+    border-radius: 10%;
+    font-size: 10;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    z-index: 4;
+    top:73%;
+    left: 5px;
+    bottom: 80px; 
+    text-align:center;   
+}
+
+#boughtTicketSucess{
+    display: none;
+    color:white;
+    position: absolute;
+    top:0px;
+    left:0px;
+    z-index:20;
+    width:190px;
+    height:212px;
+    background-color: rgba(102,124,127,0.8);
+    text-align: center;
+}
+
+#boughtnothing {
+    display: none;
+    color:white;
+    position: absolute;
+    top:0px;
+    left:0px;
+    z-index:20;
+    width:190px;
+    height:212px;
+    background-color: rgba(102,124,127,0.8);
+    text-align: center;
+}
+
+#innerBought {
+    width: 150px;
+    background-color: #db8067;
+    padding: 10px;
+    border-radius: 10%;
+    margin-left: 10px;
+    margin-top:25px;
+}
+
+#myticketsDisplay {
+    display: none;
+    position: absolute;
+    z-index:11;
+    background: #e2c8b3;
+    width:190px;
+    height:210px;     
+    color:white;
+    text-align: left;
+    font-size: 10pt;
+}
+
+
+.my-custom-scrollbar {
+  position: relative;
+  height: 150px;
+  width: 170px;
+  overflow: auto;
+}
+
+.table-wrapper-scroll-y {
+  display: block;
+  margin-left: 10px;
+  margin-top: 30px;
+}
+
+
+
+.table1{
+    display: block;
+    color:black;
+
+}
+
+.trTransS {
+  border-radius: 25px;
+  background: red;
+  border-color: cornflowerblue;
+}
+
+
+.trTransD {
+  border-radius: 25px;
+  background: rgba(50, 115, 220, 0.3);
+  border-color: cornflowerblue;
+
+}
+.trTransM {
+  border-radius: 25px;
+  background: green;
+  border-color: cornflowerblue;
+
+}
+
+.trTransE {
+  border-radius: 25px;
+  background: red;
+  border-color: cornflowerblue;
+}
+
+.trVoucherEv {
+  border-radius: 25px;
+  background: rgb(218,165,32);
+  border-color: black;
+}
+
+.trVoucherT {
+  border-radius: 25px;
+  background: rgba(226,226,226,1);
+  border-color: black;
+
+}
+
+
+.myTiconM {
+    background: cornflowerblue;
+    border-radius: 30%;
+    cursor: pointer;
+    margin-top:10px;
+    margin-left: -25px; 
+}
+
+.myTiconT {
+    background: cornflowerblue;
+    border-radius: 30%;
+    cursor: pointer;
+        margin-top:10px;
+
+}
+.myTiconB {
+    background: cornflowerblue;
+    border-radius: 30%;
+    cursor: pointer;
+        margin-top:10px;
+
+}
+.myTiconE {
+    background:cornflowerblue;
+    border-radius: 30%;
+    cursor: pointer;
+    margin-top:10px;
+
+}
+.myTiconE2 {
+    background:green;
+    border-radius: 30%;
+    cursor: pointer;
+    margin-top:10px;
+
+}
+
+#tickettext2{
+    color: white;
+}
+
+#icons{
+    bottom:10px;
+    margin-left:30px;
+}
+
+#myticketsM{
+    display: none;
+    position: absolute;
+    z-index:11;
+    background: #e2c8b3;
+    width:190px;
+    height:210px;     
+    color:white;
+    text-align: left;
+    font-size: 10pt;
+}
+
+#myticketsB{
+    display: none;
+    position: absolute;
+    z-index:11;
+    background: #e2c8b3;
+    width:190px;
+    height:210px;     
+    color:white;
+    text-align: left;
+    font-size: 10pt;
+}
+
+#myticketsT{
+    display: none;
+    position: absolute;
+    z-index:11;
+    background: #e2c8b3;
+    width:190px;
+    height:210px;     
+    color:white;
+    text-align: left;
+    font-size: 10pt;
+}
+
+#myticketsE{
+    display: none;
+    position: absolute;
+    z-index:11;
+    background: #e2c8b3;
+    width:190px;
+    height:210px;     
+    color:white;
+    text-align: left;
+    font-size: 10pt;
+}
+
+
+#presentTicketsM {
+    display: none;
+    margin-top:-30px;
+}
+
+#presentTicketsT {
+    display: none;
+    margin-top:-30px;
+}
+
+#presentTicketsB {
+    display: none;
+    margin-top:-30px;
+}
+
+#presentTicketsE {
+    display: none;
+    margin-top:-30px;
+}
+
+#Tticket{
+    cursor: pointer;
+    border-radius: 10%;
+}
+#Tticket3{
+    cursor: pointer;
+    border-radius: 10%;
+    height: 20px;
+}
+#Tticket2{
+    cursor: pointer;
+    border-radius: 10%;
+    background-color: black;
+}
+
+#TticketV{
+    cursor: pointer;
+    border-radius: 10%;
+    height: 40px;
+}
+
+#transportTicket{
+
+    display: none;
+    position: absolute;
+    z-index:16;
+    background: #e2c8b3;
+    width:190px;
+    height:210px;     
+    color:white;
+    text-align: left;
+    font-size: 10pt;
+
+}
+
+#qrcode{
+    margin-left: 20px;
+    margin-top: 47px;
+    
+}
+
+#mainHelp {
+    display: none;
+    position: absolute;
+    background-color: rgba(102,124,127,0.8);
+    width:190px;
+    height:210px;
+    color:white;
+    text-align: left;
+    font-size: 10pt;
+    z-index: 5;
+    padding-left: 5px;
+}
+
+
+#retryScan {
+    display: none;
+    position: absolute;
+    cursor: pointer;
+    width:30px;
+    height: 30px;
+    margin-left:100px;
+    margin-top:4px;
+    z-index: 19;
+    background-color: white;
+    box-shadow: 0px 0px 2.5px 2.5px white;
+    border-radius: 50%;
+
+}
+
+#arrowpic{
+    margin-top:6px;
+}
+
+
+#scanningMessage{
+    display: none;
+    position: absolute;
+    left: 230px;
+    top:60px;
+    text-align: center;
+    background-color: black;
+    color: white;
+    padding: 10px;
+    padding-right:45px;
+    border-radius: 2%;
+    width:100px;
+    font-size: 12px;
+}
+
+#buyingmenu{
+
+    display: none;
+    position: absolute;
+    z-index:16;
+    background: #e2c8b3;
+    width:190px;
+    height:210px;     
+    color:white;
+    text-align: left;
+    font-size: 10pt;
+
+}
+
+#optionvoucher{
+
+    position: absolute;
+    cursor:pointer;
+    margin-left: 15px;
+    margin-top:15px;
+    width:36px;
+    height:36px;
+    border-radius: 10%;
+    box-shadow: 0px 0px 2.5px 2.5px black;
+    background: red;
+
+}
+
+#voucheractivated{
+
+    display: none;
+    position: absolute;
+    left: 60px;
+    top: 20px;
+    color: black;
+    font-size: 12px;
+
+}
+
+#optioncontactless{
+
+   position: absolute;
+    cursor:pointer;
+    margin-left: 60px;
+    margin-top:80px;
+    width:70px;
+    height:40px;
+    border-radius: 10%;
+    box-shadow: 0px 0px 2.5px 2.5px black;
+    background: white;
+    
+}
+
+#optionmbway{
+
+    position: absolute;
+    cursor:pointer;
+    margin-left: 60px;
+    margin-top:140px;
+    width:70px;
+    height:40px;
+    border-radius: 10%;
+    box-shadow: 0px 0px 2.5px 2.5px black;
+    background: white;
+    
+}
+
+#buyingcontactless{
+
+    display: none;
+    position: absolute;
+    z-index:16;
+    background: #e2c8b3;
+    width:190px;
+    height:210px;     
+    color:white;
+    text-align: left;
+    font-size: 10pt;
+    text-align: center;
+
+}
+
+
+#confirmpaymentC{
+
+    display: none;
+    position: absolute;
+    z-index:16;
+    background: #8FBC8F;
+    width:190px;
+    height:210px;     
+    color:white;
+    text-align: left;
+    font-size: 10pt;
+    text-align: center;
+
+}
+
+#confirmpaymentM{
+
+    display: none;
+    position: absolute;
+    z-index:16;
+    background: #8FBC8F;
+    width:190px;
+    height:210px;     
+    color:white;
+    text-align: left;
+    font-size: 10pt;
+    text-align: center;
+
+}
+
+#cancelledinMBWay{
+
+    display: none;
+    position: absolute;
+    z-index:16;
+    background: red;
+    width:190px;
+    height:210px;     
+    color:white;
+    text-align: left;
+    font-size: 10pt;
+    text-align: center;
+
+}
+
+#yes{
+
+    position: absolute;
+    font-size: 4;
+    color: white;
+    cursor: pointer; 
+    width:50px;
+    height:50px;
+    border-radius: 20%;
+    box-shadow: 0px 0px 2.5px 2.5px;
+    background: darkgreen;
+    padding-right: 5px;
+    padding-left: 5px;
+    padding-top: 5px; 
+    top: 100px;
+    left:20px;
+    z-index:4;
+    text-align: center;
+
+}
+
+#no{
+     position: absolute;
+    font-size: 4;
+    color: white;
+    cursor: pointer; 
+    width:50px;
+    height:50px;
+    border-radius: 20%;
+    box-shadow: 0px 0px 2.5px 2.5px;
+    background: red;
+    padding-right: 5px;
+    padding-left: 5px;
+    padding-top: 5px; 
+    top: 100px;
+    left: 110px;
+    z-index:4;
+    text-align: center;
+
+}
+
+#buyingmbway{
+
+     display: none;
+    position: absolute;
+    z-index:16;
+    background: #e2c8b3;
+    width:190px;
+    height:210px;     
+    color:white;
+    text-align: left;
+    font-size: 10pt;
+    text-align: center;
+    vertical-align: center;
+}
+
+.scrollable-table {
+  overflow-x: auto;
+  margin-top:60px;
+}
+
+#tableCategories{
+    overflow:auto;
+    width: 100%;
+    text-align: center;
+
+}
+
+.Catname {
+    font-size: 12px;
+    color:black;
+}
+
+#category0{
+    cursor:pointer;
+    background-color: white;
+    border-radius: 50%;
+    height: 30px;
+    padding-left: 12px;
+    padding-right: 12px;
+
+}
+#category1{
+    cursor:pointer;
+    background-color: gray;
+    border-radius: 50%;
+    height: 30px;
+    padding-left: 12px;
+    padding-right: 12px;   
+
+}
+#category2{
+    cursor:pointer;
+    background-color: white;
+    border-radius: 50%;
+    height: 30px;
+    padding-left: 12px;
+    padding-right: 12px;
+}
+#category3{
+    cursor:pointer;
+    background-color: gray;
+    border-radius: 50%;
+    height: 30px;
+        padding-left: 12px;
+    padding-right: 12px;
+}
+#category4{
+    cursor:pointer;
+    background-color: white;
+    border-radius: 50%;
+    height: 30px;
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+
+#voucherdisplay {
+    display: none;
+    position: absolute;
+    z-index:11;
+    background: #e2c8b3;
+    width:190px;
+    height:210px;     
+    color:white;
+    text-align: left;
+    font-size: 10pt;
+}
+
+
+#emptyV{
+    display: none;
+    margin-top:60px;
+    margin-left: 35px;
+}
+
+#emptyVEv{
+    display: none;
+    margin-top:40px;
+    margin-left: 35px;
+}
+
+
+#presentVouchers{
+
+}
+
+#presentVouchersEv{
+    margin-top:20px;
+}
+
+.my-custom-scrollbar2 {
+  position: relative;
+  height: 80px;
+  width: 170px;
+  overflow: auto;
+}
+
+.table-wrapper-scroll-y2 {
+  display: block;
+  margin-left: 10px;
+  margin-top: 40px;
+}
+
+.my-custom-scrollbar3 {
+  position: relative;
+  height: 80px;
+  width: 170px;
+  overflow: auto;
+}
+
+.table-wrapper-scroll-y3 {
+  display: block;
+  margin-left: 10px;
+  margin-top: -13px;
+}
+
+.table2{
+    display: block;
+    color:black;
+
+}
+
+#noVouchers {
+    display: none;
+    color:white;
+    position: absolute;
+    z-index:23;
+    width:190px;
+    height:212px;
+    background-color: rgba(102,124,127,0.8);
+    text-align: center;
+}
+
+
+#noVouchersEv {
+    display: none;
+    color:white;
+    position: absolute;
+    z-index:23;
+    width:190px;
+    height:212px;
+    background-color: rgba(102,124,127,0.8);
+    text-align: center;
+}
+
+#buyingVoucher{
+
+    display: none;
+    position: absolute;
+    z-index:16;
+    background: #e2c8b3;
+    width:190px;
+    height:210px;     
+    color:white;
+    text-align: left;
+    font-size: 10pt;
+    text-align: left;
+    vertical-align: center;
+    color:black;
+}
+
+#buyingVoucherE{
+
+    display: none;
+    position: absolute;
+    z-index:16;
+    background: #e2c8b3;
+    width:190px;
+    height:210px;     
+    color:white;
+    text-align: left;
+    font-size: 10pt;
+    text-align: left;
+    vertical-align: center;
+    color:black;
+}
+
+#closebuyingV{
+    cursor: pointer;
+    width:40px;
+    margin-left:142px;
+    padding-bottom: 5px;
+    position:absolute;
+    z-index: 10;
+}
+
+
+#mainHelp {
+    display: none;
+    position: absolute;
+    background-color: rgba(102,124,127,0.8);
+    width:190px;
+    height:210px;
+    color:white;
+    text-align: left;
+    font-size: 10pt;
+    z-index: 5;
+    padding-left: 5px;
+}
+
+#closehelp {
+    cursor: pointer;
+    width:40px;
+    margin-left:145px;
+    padding-bottom: 5px;
+    margin-top: 12px;
+    position:absolute;
+    z-index: 10;
+}
+#friendEvents {
+    display: none;
+    position: absolute;
+    z-index:11;
+    background: #e2c8b3;
+    width:190px;
+    height:210px;     
+    color:white;
+    text-align: left;
+    font-size: 10pt;
+}
+
+#friendsCat {
+    position: absolute;
+    cursor: pointer;
+    background-color: #818e8d;
+    width: 60%;
+    text-align: left;
+    margin-top: 10px;
+    margin-left:44px;
+    border-radius: 10px;
+    font-size: 12pt;
+    display: none;
+    z-index: 10;
+     box-shadow: 0px 0px 2.5px 2.5px;
+    
+}
+
+#drop {
+    position: absolute;
+    margin-top: 12px;
+    margin-left: 168px;
+    cursor: pointer;
+    color: white;
+    font-size: 18px;
+}
+
+#tableTop {
+    position: absolute;
+    cursor: pointer;
+    background-color: white;
+    color: black;
+    width:109px;
+    text-align: left;
+    margin-top: 10px;
+    margin-left:44px;
+    border-radius: 60px;
+    font-size: 12pt;
+    padding-left: 5px;
+    padding-top: 5px;
+}
+
+.friendChoice:hover {
+    background-color: #f7a085;
+    border-radius: 10px;
+}
+
+.friendChoice{
+    padding-left: 5px;
+    padding-top: 5px;
+}
+
+#evList {
+    position: absolute;
+    overflow-y: scroll;
+    height: 160px;
+    top:45px;
+    left:10px;
+    width:170px;
+    z-index: 9;
+    color: black;
+}
+
+#evListVertical{
+    display:none;
+    height:120px;
+    position: absolute;
+    overflow-y: auto;
+    margin-top:40px;
+    margin-left:10px;
+    width: 170px;
+    z-index: 9;
+    color: black;
+    font-weight: bold;
+}
+
+.eventEL {
+    background-color: #db8067;
+    margin-bottom: 2px;
+    padding-top: 1px;
+    padding-left: 2px;
+}
+
+#back {
+   position: absolute;
+    color: #818e8d;
+    left:5px;
+    top:4px;
+    cursor: pointer; 
+    width:30px;
+    height:24px;
+    border-radius: 50%;
+    box-shadow: 0px 0px 2.5px 2.5px white;
+    background: #818e8d;
+    padding-top: 4px;
+    padding-bottom: 2px;
+    z-index:10;
+    
+}
+
+#buyTicket {
+    display: none;
+    position: absolute;
+    z-index:12;
+    background: #e2c8b3;
+    width:170px;
+    height:190px;     
+    color:white;
+    text-align: left;
+    font-size: 10pt;
+    padding: 10px;
+}
+
+#evName {
+    display: inline-block;
+    font-size: 10pt;
+    margin-left:0px;
+    margin-top: 0px;
+    width: 145px;
+
+}
+
+#closeBuy {
+    cursor: pointer;
+    width:40px;
+    margin-left:70px;
+    margin-top:-8px;
+    padding-bottom: 5px;
+    position:absolute;
+    z-index: 10;
+}
+
+.number-wrapper-event {
+    position: absolute;
+    top:55px;
+    left: 20px;
+}
+
+
+
+#totalPrice {
+    position: absolute;
+    top:180px;
+    left:20px;
+    background-color: #db8067;
+    padding: 3px;
+    border:solid thick white;
+    border-style: ridge;
+    border-width: 2px;
+    border-radius: 5px;
+}
+
+#pay {
+    cursor: pointer;
+    position: absolute;
+    top:170px;
+    left:130px;
+    background-color:darkseagreen;
+    border-radius: 5px;
+    padding: 5px;
+    box-shadow: 0px 0px 2.5px 2.5px white;
+    height: 20px;
+    width: 40px;
+}
+
+
+
+#placeandtime {
+    font-size: 9pt;
+    margin-left: 0px;
+}
+
+#yesV{
+
+    position: absolute;
+    font-size: 4;
+    color: white;
+    cursor: pointer; 
+    width:40px;
+    height:40px;
+    border-radius: 20%;
+    box-shadow: 0px 0px 2.5px 2.5px;
+    background: darkgreen;
+    padding-right: 5px;
+    padding-left: 5px;
+    padding-top: 5px; 
+    top: 155px;
+    left:30px;
+    z-index:4;
+    text-align: center;
+
+}
+
+#noV{
+     position: absolute;
+    font-size: 4;
+    color: white;
+    cursor: pointer; 
+    width:40px;
+    height:40px;
+    border-radius: 20%;
+    box-shadow: 0px 0px 2.5px 2.5px;
+    background: red;
+    padding-right: 5px;
+    padding-left: 5px;
+    padding-top: 5px; 
+    top: 155px;
+    left: 110px;
+    z-index:4;
+    text-align: center;
+
+}
+
+#percentage{
+    font-size: 25px;
+}
+#category5 {
+    cursor:pointer;
+    background-color: gray;
+    border-radius: 50%;
+    height: 30px;
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+#category6 {
+    cursor:pointer;
+    background-color: white;
+    border-radius: 50%;
+    height: 30px;
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+#category7 {
+    cursor:pointer;
+    background-color: gray;
+    border-radius: 50%;
+    height: 60px;
+        padding-left: 12px;
+    padding-right: 12px;
+}
+
+#closesearch {
+    margin-left:  150px;
+}
+
+.lilheart {
+    float: right;
+    margin-right: 25px;
+    margin-top: -22px;
+}
+
+.lilheartlocal {
+    float: right;
+   margin-right: 15px;
+    margin-top: -22px;
+
+}
+
+#localTitle{
+    margin-top: 15px;
+    font-size: 16px;
+    color: white;
+    margin-left: 43px;
+
+}
+
+#localEvents {
+    display: none;
+    position: absolute;
+    z-index:11;
+    background: #e2c8b3;
+    width:190px;
+    height:210px;     
+    color:white;
+    text-align: left;
+    font-size: 10pt;
+}
+
+#buyevtn {
+    background: green;
+    color: white;
+    cursor: pointer;
+    position: absolute;
+    left:40px;
+    color: white;
+    cursor: pointer; 
+    width: 60px;
+    height:15px;
+    border-radius: 10%;
+    font-size: 10;
+    padding-top: 5px;
+    padding-bottom: 8px;
+    z-index: 4;
+    left: 120px;
+    bottom: 8px; 
+    text-align:center;   
+    box-shadow: 0px 0px 2.5px 2.5px;
+}
+
+#totalpriceEv {
+    color: white;
+    position: absolute;
+    left:10px;
+    color: white;
+    cursor: pointer; 
+    width:90px;
+    height:20px;
+    border-radius: 10%;
+    font-size: 10pt;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    z-index: 4;
+    top:170px; 
+    text-align:center;   
+}
+

@@ -1,0 +1,2550 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+
+        <title>Tickets</title>
+        <link rel = "stylesheet" href = "styleTickets.css">
+        <meta charset="UTF-8">
+
+    </head>
+
+	<body onload="color();">	
+
+		<div id="iGoWrapper">
+	        <img src="bracelet.png" id="bracelet" >
+
+	        <button class= "btn" id = "lockbutton" onclick = "lock();"></button>
+          <button class="btn" id = "backbutton" onclick = "goHome();"></button>
+
+			<div id = "iGobox">
+
+				<div id = "lockscreen" onclick="lock()"></div>
+
+            
+				<div id = "main">  
+
+                    <div id="myticketsDisplay">
+
+                      <img src = "close.png" id="closehelpM" onclick="closeMyTickets();">   
+
+                      <span id="icons">
+                        <span id="myTTicketsM" onclick="openMyTicketsM();presentTicketsM();"><img src="metro.png" class="myTiconM" width="32"></span>
+                        <span id="myTTicketsT" onclick="openMyTicketsT();presentTicketsT();"><img src="train.png" class="myTiconT" width="32"></span>   
+                        <span id="myTTicketsB" onclick="openMyTicketsB();presentTicketsB();"><img src="bus.png" class="myTiconB" width="32"></span>
+                        <span id="myTTicketsE" onclick="openMyTicketsE();presentTicketsE();"><img src="event.png" class="myTiconE" width="32"></span>
+                      </span>
+                                
+                    </div>
+
+                    <div id="voucherdisplay">
+
+                      <img src = "close.png" id="closehelpM" onclick="closediv('voucherdisplay');"> 
+
+                      <span id="emptyV"> <em><b>Não tem Vouchers Transportes.</b></em> </span>
+
+                      <span id= "presentVouchers">
+                          
+                      </span>
+
+                       <span id="emptyVEv"> <em><b>Não tem Vouchers Eventos.</b></em> </span>
+
+                      <span id= "presentVouchersEv">
+                          
+                      </span>
+
+                     
+                                
+                    </div>
+
+                   
+
+                    <div id="myticketsM">
+
+                      <img src = "close.png" id="closehelpM" onclick="closeMyTickets();">   
+
+                       <span id="icons">
+
+                        <span id="myTTicketsM" onclick="openMyTicketsM();presentTicketsM();"><img src="metro.png" class="myTiconM" width="32"></span>
+                        <span id="myTTicketsT" onclick="openMyTicketsT();presentTicketsT();"><img src="train.png" class="myTiconT" width="32"></span>   
+                        <span id="myTTicketsB" onclick="openMyTicketsB();presentTicketsB();"><img src="bus.png" class="myTiconB" width="32"></span>
+                        <span id="myTTicketsE" onclick="openMyTicketsE();presentTicketsE();"><img src="event.png" class="myTiconE" width="32"></span>
+
+                      </span>
+
+                        <br><br>
+                            <span id="emptyM"> <em><b>Vazio</b></em> </span>
+
+                           <span id= "presentTicketsM">
+                          
+                           </span>
+
+                    </div>
+
+                     <div id="myticketsT">
+
+                        <img src = "close.png" id="closehelpM" onclick="closeMyTickets();">   
+
+                       <span id="icons">
+
+                        <span id="myTTicketsM" onclick="openMyTicketsM();presentTicketsM();"><img src="metro.png" class="myTiconM" width="32"></span>
+                        <span id="myTTicketsT" onclick="openMyTicketsT();presentTicketsT();"><img src="train.png" class="myTiconT" width="32"></span>   
+                        <span id="myTTicketsB" onclick="openMyTicketsB();presentTicketsB();"><img src="bus.png" class="myTiconB" width="32"></span>
+                        <span id="myTTicketsE" onclick="openMyTicketsE();presentTicketsE();"><img src="event.png" class="myTiconE" width="32"></span>
+
+                      </span>
+
+                       <br><br>
+                        <span id="emptyT"> <em><b>Vazio</b></em> </span>
+
+                          <span id= "presentTicketsT">
+                          </span>
+
+                        
+                    </div>
+
+                    <div id="transportTicket">
+
+                        <img src = "close.png" id="closehelpM" onclick="closeScanning();closediv('transportTicket');">   
+
+                        <img src = "blackqr.png" id = "qrcode" width="150">   
+                        
+
+                    </div>
+
+                     <div id="myticketsB">
+
+                      <img src = "close.png" id="closehelpM" onclick="closeMyTickets();">   
+                        <span id="icons">
+
+                        <span id="myTTicketsM" onclick="openMyTicketsM();presentTicketsM();"><img src="metro.png" class="myTiconM" width="32"></span>
+                        <span id="myTTicketsT" onclick="openMyTicketsT();presentTicketsT();"><img src="train.png" class="myTiconT" width="32"></span>   
+                        <span id="myTTicketsB" onclick="openMyTicketsB();presentTicketsB();"><img src="bus.png" class="myTiconB" width="32"></span>
+                        <span id="myTTicketsE" onclick="openMyTicketsE();presentTicketsE();"><img src="event.png" class="myTiconE" width="32"></span>
+
+                      </span>
+                       <br><br>
+                            <span id="emptyB"> <em><b>Vazio</b></em> </span>
+                        
+                        <span id= "presentTicketsB">
+
+                         
+                      </span> 
+
+                    </div>
+
+                    <div id="myticketsE">
+
+                      <img src = "close.png" id="closehelpM" onclick="closeMyTickets();">   
+                        <span id="icons">
+
+                        <span id="myTTicketsM" onclick="openMyTicketsM();presentTicketsM();"><img src="metro.png" class="myTiconM" width="32"></span>
+                        <span id="myTTicketsT" onclick="openMyTicketsT();presentTicketsT();"><img src="train.png" class="myTiconT" width="32"></span>   
+                        <span id="myTTicketsB" onclick="openMyTicketsB();presentTicketsB();"><img src="bus.png" class="myTiconB" width="32"></span>
+                        <span id="mytTicketsE" onclick="openMyTicketsE();presentTicketsE();"><img src="event.png" class="myTiconE2" width="32"></span>
+
+                      </span>
+                       <br><br>
+                            <span id="emptyE"> <em><b>Vazio</b></em> </span>
+                        
+                        <span id= "presentTicketsE">
+
+                         
+                      </span> 
+
+                    </div>
+
+                   <div id="boughtTicketSucess">
+                            <img src = "close.png" class="close" onclick="closediv('boughtTicketSucess');" >
+                            <div id="innerBought">
+                                Compra efetuada com sucesso!
+                           </div>
+                    </div>
+
+                    <div id="boughtnothing">
+                            <img src = "close.png" class="close" onclick="closediv('boughtnothing');" >
+                            <div id="innerBought">
+                                Não selecionou nenhum bilhete!
+                           </div>
+                    </div>
+
+                    <div id="noVouchers">
+                            <img src = "close.png" class="close" onclick="closediv('noVouchers');" >
+                            <div id="innerBought">
+                                Não possui nenhum voucher!
+                           </div>
+                    </div>
+
+                   <div id="publictransports">
+                      <span id="closedet" onclick="closediv('publictransports');">,,<img src = "back.png" width="15"></span>
+                      <span id="helptrans" onclick="opendiv('transportsPHelp');">?</span>
+                       <span id="metro" onclick="buyMetro();"><img src="metro.png" class="tpim"></span>
+                        <span id="bus" onclick="buyBus()">
+                        <img src="bus.png" class="tpim"></span>
+                        <span id="train" onclick="buyTrain();">
+                        <img src="train.png" class="tpim"></span>
+                        <span id="pricesbtn" onclick="opendiv('prices');"><span id="pricename">PREÇOS</span></span>
+
+                    </div>
+
+                    <div id="transportsPHelp">
+                        <img src = "close.png" id="closehelpM" onclick="closediv('transportsPHelp');">
+                        <br>
+                        &emsp;&emsp;&emsp;&larr; back
+                       <br><br><br><br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<br>
+                        METRO &emsp;COMBOIO &emsp;AUTO-
+                        <br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;CARRO
+                        <br><br><br><br> &emsp;&emsp;clique num transporte 
+                        <br>&emsp;&emsp;&emsp;para adquirir bilhete
+                    </div> 
+
+                    <div id="prices">
+                          <img src = "close.png" class="close" onclick="closediv('prices');" >
+                          <div id="innerprices">
+
+                            &emsp; &emsp;&emsp;<span id="titlePrices"><b>PREÇOS</b></span>
+
+                            <table style="width:100%">
+                            <tr>
+                              <th></th>
+                              <th><img src = "metro.png" width="20" ></th>
+                              <th><img src = "train.png" width="20" ></th> 
+                              <th><img src = "bus.png" width="20" ></th>
+                            </tr>
+                            <tr>
+                              <td><span id="blacktitle">Único</span></td>
+                              <td>1,5€</td>
+                              <td>2€</td> 
+                              <td>1€</td>
+                            </tr>
+                            <tr>
+                              <td><span id="blacktitle">Diário</span></td>
+                              <td>6€</td> 
+                              <td>10€</td>
+                              <td>6€</td>
+                            </tr>
+                            <tr>
+                              <td><span id="blacktitle">Mensal</span></td>
+                              <td>40€</td> 
+                              <td>60€</td>
+                              <td>30€</td>
+                            </tr>
+                          </table>
+                              
+                         </div>
+                  </div>
+
+                  <div id="buyTransportScreen"> 
+
+                    <img src = "close.png" id="closehelpM" onclick="closediv('buyTransportScreen');">
+
+                    <span class="number-wrapper" >
+                      <p><input type="number" min="0" max="10" id="singleTickets" > <span id="singlePrice">unitário - 1,5€</span></p>
+                      <p><input type="number" min="0" max="10" id="dailyTickets" > <span id="dailyPrice">diário - 5€</span></p>
+                      <p><input type="number" min="0" max="10" id="monthlyTickets" > <span id="monthlyPrice">mensal - 40€</span></p>
+                    </span>
+                
+                     <span id="totalprice"> <b>TOTAL:</b><br> <span id="totalpriceNr" onclick="getTotalPrice();">0 €</span> </span>
+
+                    <span id="buytransbtn" onclick="opendiv('buyingmenu');verifyInput();"><img src="pay.png" id="payicon" width="40"> </span>
+
+                  </div>
+
+                   <div id="buyingmenu">
+
+                        <img src = "close.png" id="closehelpM" onclick="closediv('buyingmenu');">   
+
+                        <span id="optionvoucher" onclick="hasVoucherVerif();">
+                        <img src="voucher.png" width="35" id="imgvoucher"></span>
+                        <span id="voucheractivated">UTILIZANDO <br>VOUCHER</span>
+                        <span id="optioncontactless" onclick="buyContactless();">
+                        ,,,,<img src="contactless.png" width="35" id="imgcontactless"></span>
+                        <span id="optionmbway" onclick="buyMBWay();">
+                        ,,<img src="mbway.png" width="60" id="imgmbway"></span>
+
+                    </div>
+
+                    <div id="buyingcontactless">
+
+                        <img src = "close.png" id="closebuying" onclick="closediv('buyingcontactless');stopContactless();">   
+
+                        <br><br><br>
+                        Encoste o seu <br>cartão contactless.
+                        <br>
+                        <img src = "wifi2.png" width="100">
+
+
+                    </div>
+
+                    <div id="buyingmbway">
+
+                        <img src = "close.png" id="closebuying" onclick="closediv('buyingmbway');stopMBWay();">   
+
+                        <br><br><br>
+                        
+                        <img src = "qr_mb.png" width="130"> <br>  
+                        <img src = "mbway.png" width="50">   
+
+                    </div>
+
+                     <div id="buyingVoucher">
+
+                        <img src = "close.png" id="closebuyingV" onclick="closediv('buyingVoucher');">   
+
+                        <br><br><br>
+
+                        &emsp;Possui <b><span id="nrVouchers">n</span> Vouchers</b>. <br>
+
+                        &emsp;Pretende utilizar <b>1 Voucher</b>? <br><br>
+
+                        &emsp;&emsp;&emsp;TOTAL: <span id="totalpriceNrVoucher">0 €</span> 
+                        <br>
+                        &emsp;&emsp;&emsp;VOUCHER: -30%
+                         <br>
+                        &emsp;&emsp;&emsp;A PAGAR: <span id="newpriceVoucher">0 €</span> 
+                         <br>
+                        <span id="yesV" onclick="useVoucher();closediv('buyingVoucher');"><br><b>SIM</b></span>
+                        <span id="noV" onclick="dontuseVoucher();closediv('buyingVoucher');"><br><b>NÃO</b></span>
+
+
+                    </div>
+
+                     <div id="confirmpaymentC">
+
+                        <img src = "close.png" id="closebuying" onclick="closediv('confirmpaymentC');closediv('buyingcontactless');">   
+
+                        <br><br><br>
+                        Cartão detetado.
+                        <br>
+                        Confirma pagamento?
+
+                        <span id="yes" onclick="addTransportTicket();closediv('confirmpaymentC');closediv('buyingcontactless');closediv('buyingmenu');"><br><b>SIM</b></span>
+                        <span id="no"  onclick="closediv('confirmpaymentC');closediv('buyingcontactless');"><br><b>NÃO </b></span>
+
+                        
+
+                    </div>
+
+                     <div id="confirmpaymentM">
+
+                        <img src = "close.png" id="closebuying" onclick="closediv('confirmpaymentM');">   
+
+                        <br><br><br><br><br>
+                        Pagamento em curso <br> na app <b>MBWAY</b>...
+                        <br><br>
+                        <img src = "mbway.png" width="50">   
+                                           
+                    </div>
+
+                    <div id="cancelledinMBWay">
+
+                        <img src = "close.png" id="closebuying" onclick="closediv('cancelledinMBWay');closediv('confirmpaymentM');closediv('buyingmbway');">   
+
+                        <br><br><br><br><br>
+                        Pagamento <b> CANCELADO </b> <br> na app <b>MBWAY</b>...
+                        <br><br>
+                        <img src = "mbway.png" width="50">   
+                                           
+                    </div>
+                    
+                    <div id="searchMenu"> 
+
+                        
+                        <img src = "close.png" class="close" id ="closesearch" onclick="closediv('searchMenu');resetSearch();disableVoice();">
+                        <div id="clearE" class="close" onclick="resetSearch();"><span id="virg">-..</span>limpar </div>
+                        
+                        <img src="//:0" alt="" id="curCat">
+
+                        <input type="text" id="searchTextExt"  onkeydown = "if (event.keyCode == 13)
+                        document.getElementById('searchbtn').click()"  value="" >
+                        
+                        <input type="text" id="searchText" value="" disabled>
+                      
+                        
+                        <button id="searchbtn" onclick="goSearch()"> <img src="lupa.png" width="15"> </button>
+                        <button id="micbtn" onclick="enableVoice()"> <img src="voice.png" width="15"> </button>
+                        
+                        
+                        
+                        <div id = "evListVertical">
+                            
+                        </div>
+
+                        
+                        
+                        
+                     <div class="scrollable-table " id="categories">
+
+                      <table style="width:100%" id="tableCategories">
+                        <tr>
+                          <td id="category0" onclick="searchCat('art')" ><img src = "arte.png" width="40"></td>
+                          <td id="category1" onclick="searchCat('cinema')" ><img src = "cinema.png" width="40"></td>
+                          <td id="category2" onclick="searchCat('theatre')" > <img src = "teatro.png" width="40"></td>
+                          <td id="category3" onclick="searchCat('music')" ><img src = "music.png" width="40" ></td>
+                          <td id="category4" onclick="searchCat('sport')" ><img src = "sport.png" width="40"></td>
+                          <td id="category5" onclick="searchCat('night')" ><img src = "night.png" width="40"></td>
+                          <td id="category6" onclick="searchCat('tour')" ><img src = "tour.png" width="40"></td>
+                          <td id="category7" onclick="searchCat('other')" ><img src = "other.png" width="40"></td>
+                          
+                        </tr>
+                        <tr>
+                          <td class="Catname"><b>Arte</b></td>
+                          <td class="Catname"><b>Cinema</b></td> 
+                          <td class="Catname"><b>Teatro</b></td>
+                          <td class="Catname"><b>Música</b></td>
+                          <td class="Catname"><b>Desporto</b></td> 
+                          <td class="Catname"><b>Noite</b></td>
+                          <td class="Catname"><b>Tours</b></td>
+                          <td class="Catname"><b>Outros</b></td> 
+
+                          
+                        </tr>
+                    </table>
+
+                     </div>
+                            
+
+                    </div>
+                    
+                    <div id="voiceMenu" class="voicePOP">
+                        <div id="voiceSpeak">
+                        Por favor fale claramente.<span style="font-size: 15pt"></span>
+                        
+                        </div>
+                    </div>
+                    
+                     <div id="fav">
+                        <img src = "close.png" id="favclose" class="close" onclick="closediv('fav');closediv('removeFav');" >
+                        <span class="favtitle"><b> ❤ Favoritos</b></span>
+                        <div class="vertical-menu" id="favouritesmenu">
+                            <span id="favempty"> <em><b>Vazio</b></em> </span>
+                    </div> 
+                    </div>
+                     <div id="removeFav">
+                            <span id="removeempty"><b> </b></span>
+                            <div class="vertical-menu" id="removeX" onscroll="OnScroll(this)">
+                            </div>
+                      </div>
+
+
+                  <div class = "upper" id = "firstupper" onclick="opendiv('myticketsDisplay');"> 
+
+                      <img src="blackticket.png"  id= "mytickets" width=25 >
+
+                  </div>
+
+                  <div class = "upper" id = "secondupper" width="30px"> 
+
+                       <img src="heart.png" id= "favorites" width=22 onclick="opendiv('fav');opendiv('removeFav');">
+
+                  </div>
+
+                  <div class = "upper" id = "helpTickets" onclick="opendiv('mainHelp');"> 
+
+                      ?
+
+                  </div> 
+
+
+                  <div class = "middle" id = "firstmiddle"  onclick="opendiv('friendEvents');" > 
+
+                      <img src="rank.png"  id= "searchfriends" width=30 >
+
+                  </div>
+
+                  <div class = "middle" id = "secondmiddle"> 
+
+                       <img src="lupa2.png" id= "searchclassic" width="32" onclick="opendiv('searchMenu');resetSearch();">
+
+
+                  </div>
+
+                  <div class = "middle" id = "thirdmiddle" onclick="opendiv('localEvents');" > 
+
+                       <img src="blpin.png"  id= "searchmap" width=18 >
+
+                  </div>
+
+
+
+
+                  <div class = "down" id = "firstdown" onclick="opendiv('voucherdisplay');presentVouchers();"> 
+
+                      <img src="voucher.png"  id= "vouchers" width=25 >
+
+                  </div>
+
+                  <div class = "down" id = "seconddown" onclick="opendiv('publictransports');"> 
+
+                       <img src="pubtrans.png" id= "transports" width=25 >
+
+
+                  </div>
+                    <div id=mainHelp>
+                    <img src = "close.png" id="closehelp" onclick="closediv('mainHelp');">
+                    <br>
+            os meus &emsp;favoritos<br> &emsp;bilhetes
+                    <br><br>PESQUISAR EVENTOS POR:<br><br><br>
+                    amigos &emsp; palavra &emsp;&emsp; local
+                    &emsp;&emsp;&emsp;&emsp;&emsp; chave
+                    <br><br><br>
+                     &emsp;&emsp;&emsp;&emsp;&emsp;descontos
+                    <br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;transportes
+                </div>
+
+                 <div id="scanningMessage">
+                      <span id = "retryScan" onclick="reScanning();"> <img src = "retry.png"  id="arrowpic"width="15"></span>
+                        <span id="smessage">Scanning... </span><br><br>
+                      <img src = "833.gif" id="loadgif" width="20" >
+
+                </div>
+                    
+                </div>
+                    
+                    <div id=mainHelp>
+                    <img src = "close.png" id="closehelp" onclick="closediv('mainHelp');">
+                    <br>
+                    os meus &emsp;favoritos<br> &emsp;bilhetes
+                    <br><br>PESQUISAR EVENTOS POR:<br><br><br>
+                    amigos &emsp; palavra &emsp;&emsp; local
+                    &emsp;&emsp;&emsp;&emsp;&emsp; chave
+                    <br><br><br>
+                     &emsp;&emsp;&emsp;&emsp;&emsp;descontos
+                    <br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;transportes
+                    </div>
+                    
+                    <div id= "friendEvents">
+                        <div id="drop" onclick="openclosediv('friendsCat');">V</div>
+                        <div id ="back" onclick="closediv('friendEvents');">;;<img src = "back.png" width="15"></div>
+                        <div id=tableTop onclick="openclosediv('friendsCat');">Todos</div>
+                        <div id="friendsCat">
+                                <div class="friendChoice" onclick="closediv('friendsCat')">Todos</div>
+                                <div class="friendChoice" id="cat1" onclick="changeCat('cat1')">Família</div>
+                                <div class="friendChoice" id="cat2" onclick="changeCat('cat2')">Conhecidos</div>
+                                <div class="friendChoice" id="cat3" onclick="changeCat('cat3')">BFFs</div>
+                                <div class="friendChoice" id="cat4" onclick="changeCat('cat4')">Trabalho</div>
+                                <div class="friendChoice" id="cat5" onclick="changeCat('cat5')">Faculdade</div>
+                        </div>
+                        <div id = "evList">
+                            <div class= "eventEL" onclick="openEvent(17);"><b>History Trivia Night</b><br>14/05/19 <br> Hallets<br><img src="fp7.png" width="20px"><img src="fp8.png" width="20px"><img src="fp3.png" width="20px">  </div> <img class="lilheart" id="triviaH" src="tryheart2.png" width="20px" onclick="addFav(17,'triviaH');">
+                           
+                            <div class= "eventEL" onclick="openEvent(13);"><b>F.C. Harlem x Scotia</b><br>14/05/19 <br> Octagonal Footbal<br><img src="fp1.png" width="20px"><img src="fp3.png" width="20px"><img src="fp5.png" width="20px"> </div> <img class="lilheart" src="tryheart2.png" width="20px" id="footH" onclick="addFav(13,'footH');">
+                             
+                            <div class= "eventEL"onclick="openEvent(7);"><b>Exposição "The Waves"</b><br>15/05/19 <br> Guggenhewitt
+                            <br><img src="fp2.png" width="20px"><img src="fp4.png" width="20px"><img src="fp6.png" width="20px"><img src="fp7.png" width="20px"> </div>  <img class="lilheart" src="tryheart2.png" width="20px" id="expH" onclick="addFav(7,'expH');">
+                            
+                            <div class= "eventEL" onclick="openEvent(21);"><b>O Homem e a Lua</b><br>25/05/19 <br> Julliard<br><img src="fp2.png" width="20px"><img src="fp6.png" width="20px"><img src="fp4.png" width="20px">  </div> <img class="lilheart" src="tryheart2.png" width="20px" id="manH" onclick="addFav(21,'manH');">
+                            
+                            <div class= "eventEL" onclick="openEvent(26);"><b>Festival Indie NYU</b><br>07/06/19 <br> Opera House<br><img src="fp5.png" width="20px"> </div> <img class="lilheart" src="tryheart2.png" width="20px" id="festH" onclick="addFav(26,'festH');">
+                            
+                            <div class= "eventEL" onclick="openEvent(8);"><b>Tour de Street Art</b><br>09/06/19 <br> Central Park Zoo
+                            <br><img src="fp1.png" width="20px"><img src="fp2.png" width="20px"> </div> <img class="lilheart" src="tryheart2.png" width="20px" id="tourH" onclick="addFav(8,'tourH');">
+                            
+                            <div class= "eventEL" onclick="openEvent(31);"><b>Troca de Cartas Pokemon</b><br>20/06/19 <br>Starbucks<br><img src="fp3.png" width="20px"><img src="fp4.png" width="20px"><img src="fp8.png" width="20px">  </div>  <img class="lilheart" src="tryheart2.png" width="20px" id="cardH" onclick="addFav(31,'cardH');">
+                        </div>
+                    </div>
+
+                     <div id= "localEvents">
+                        <div id ="back" onclick="closediv('localEvents');">;;<img src = "back.png" width="15"></div>
+
+                        <div id="localTitle"><b>EVENTOS PERTO</b></div>
+                        <div id = "evList">
+                            <div class= "eventEL" onclick="openEvent(0);"><b>Billy John em Concerto</b><br>13/05/19 <br> Opera House<br> </div>  <img class="lilheart" src="tryheart2.png" width="20px" id="billyH" onclick="addFav(0,'billyH');">
+                           
+                            <div class= "eventEL" onclick="openEvent(1);"><b>Ariana Grande</b><br>20/06/19 <br> Central Park<br></div>  <img class="lilheart" src="tryheart2.png" width="20px" id="ariH" onclick="addFav(1,'ariH');">
+                             
+                            <div class= "eventEL"onclick="openEvent(6);"><b>Palestra: o Valor da Arte Moderna</b><br>20/05/19 <br> Museo del Barrio <br></div>  <img class="lilheart" src="tryheart2.png" width="20px" id="palH" onclick="addFav(6,'palH');">
+                            
+                            <div class= "eventEL" onclick="openEvent(30);"><b>Speed Dating Central Park</b><br>16/05/19 <br> Central Park<br></div>  <img class="lilheart" src="tryheart2.png" width="20px" id="spdH" onclick="addFav(30,'spdH');">
+                            
+                            <div class= "eventEL" onclick="openEvent(29);"><b>Picnic de Início de Verão</b><br>07/06/19 <br> Joan of Ark Park<br></div>  <img class="lilheart" src="tryheart2.png" width="20px" id="picH" onclick="addFav(29'picH');">
+                            
+                        </div>
+                    </div>
+                    
+                    <div id="buyTicket" onclick="getTotalPriceEv();">
+                      <img src = "close.png" id="closehelpBT" onclick="closediv('buyTicket');">   
+ 								 <span id="evName">[NOME]</span><br> <span id="placeandtime">sitio] - [data]</span>
+                        <span class="number-wrapper-event" >
+                          <p><input type="number" min="0" max="10" id="normalTickets" onclick="getTotalPriceEv();" > normal - 20€</p>
+                          <p><input type="number" min="0" max="10" id="seniorTickets" onclick="getTotalPriceEv();"> senior - 15€</p>
+                          <p><input type="number" min="0" max="10" id="childTickets" onclick="getTotalPriceEv();"> criança - 10€</p>
+                        </span>
+                        
+                        <span id="totalpriceEv"> <b>TOTAL:&emsp;</b><span id="totalpriceNrEv" onclick="getTotalPriceEv();">0 €</span> </span>
+                        
+                        <span id="buyevtn" onclick="opendiv('buyingmenu');verifyInputEv();"><img src="pay.png" id="payicon" width="30"> </span>
+
+                    
+                    </div>
+
+
+                </div>
+            </div>
+
+                   
+
+	</body>
+
+    <script>
+
+      //the following vars are the data structures that store events 
+        var event_names = ['Billy John em Concerto','Ariana Grande: Sweetner Tour','P!nk: World Tour','Lançamento Novo Album: The Fly',
+                           'Exposição de Escultura Grega','Aula de Pintura com Guilia Grant','Palestra: o Valor da Arte Moderna','Exposição: "The Waves"',
+                           'Tour de Street Art','The Ghost Tour','Os Segredos do Metro de NYC','Vinho e Queijos de Lower Manhattan',
+                            'Basquetebol: Nicks x Giants','Futebol: F.C. Harlem x New Scotia','Treino Aberto: Greenwitch Warriors','Maratona Anual de Queens',
+                           'Open Mike: Johns Tavern','History Trivia Night','80s Throwback Disco Party','The Keg Challenge',
+                           'Shakespeare in the Park','O Homem e a Lua','Agata','Hamlet',
+                           'Estreia: Spiderman','Matiné de Charlie Chaplin','Festival Indie NYU','Estreia: A Rainha das Rosas',
+                           'Mercado de Antiguidades','Picnic de Início de Verão','Speed Dating Central Park','Troca de Cartas Pokemon'];
+        var event_location = ['Opera House','Central Park','Joan of Ark Park','Asia Society',
+                              'Whitney Museum','Starbucks','Museo del Barrio','Guggenhewitt',
+                              'Central Park Zoo','Anibal Avyles','La Puperia','White Castle',
+                             'Lasker Rink','Octagonal Footbal','Tennis Central Park', 'Goodwill',
+                             'Central Park','Hallets','La Puperia','White Castle',
+                             'Central Park','Julliard','The Mermaid Inn','Opera House',
+                             'Julliard','Riverside Park','Opera House','Central Park',
+                             'Anibal Avyles','Joan of Ark Park','Central Park','Starbucks'];
+        //date = dd/mm ano = 2019
+        var event_dates = ['13/05','20/06','16/05','04/06',
+                           '06/07','30/05','20/05','15/05',
+                           '09/06','23/05','18/05','24/05',
+                           '17/05','14/05','22/05','10/06',
+                           '12/06','14/05','26/05','08/06',
+                           '19/05','25/05','13/05','17/05',
+                           '18/07','20/06','07/06','21/05',
+                           '16/05','07/06','16/05','20/06'];
+        
+        var event_music = ['Billy John em Concerto','Ariana Grande: Sweetner Tour','P!nk: World Tour','Lançamento Novo Album: The Fly'];
+        var event_art = ['Exposição de Escultura Grega','Aula de Pintura com Guilia Grant','Palestra: o Valor da Arte Moderna','Exposição: "The Waves"'];
+        var event_tour = ['Tour de Street Art','The Ghost Tour','Os Segredos do Metro de NYC','Vinho e Queijos de Lower Manhattan'];
+        var event_sport = ['Basquetebol: Nicks x Giants','Futebol: F.C. Harlem x New Scotia','Treino Aberto: Greenwitch Warriors','Maratona Anual de Queens'];
+        var event_night = ['Open Mike: Johns Tavern','History Trivia Night','80s Throwback Disco Party','The Keg Challenge'];
+        var event_theatre = ['Shakespeare in the Park','O Homem e a Lua','Agata','Hamlet'];
+        var event_cinema = ['Estreia: Spiderman','Matiné de Charlie Chaplin','Festival Indie NYU','Estreia: A Rainha das Rosas'];
+        var event_other = ['Mercado de Antiguidades','Picnic de Início de Verão','Speed Dating Central Park','Troca de Cartas Pokemon'];
+        
+        var event_category  =['Música','Música','Música','Música','Arte','Arte','Arte','Arte','Tours','Tours','Tours','Tours','Desporto','Desporto','Desporto','Desporto','Noite','Noite','Noite','Noite','Teatro','Teatro','Teatro','Teatro','Cinema','Cinema','Cinema','Cinema','Outros','Outros','Outros','Outros'];
+        
+        var listNames = [event_names, event_location, event_dates];
+        var searchedList = [];
+
+        if(sessionStorage.getItem("running")){
+            var activity_running = parseInt(sessionStorage.getItem("running"));
+        }
+        else {
+            var activity_running = 0;
+        }
+        
+        var activityStatus;
+        var favourites =  [0,0,0,0,
+                           0,0,0,0,
+                           0,0,0,0,
+                           0,0,0,0,
+                           0,0,0,0,
+                           0,0,0,0,
+                           0,0,0,0,
+                           0,0,0,0];
+        
+        var favEv = [];
+        var favName = [];
+        
+        if(sessionStorage.getItem("favourites")){
+            goSearchSpecial();
+            var counter;
+            
+            var storedArrayString = sessionStorage.getItem("favourites");
+            var storedArray = storedArrayString.split(",");
+
+            for(counter = 0; counter<storedArray.length;counter++){
+                if(storedArray[counter]=="1"){
+                    addFavSearch(counter);
+                }
+            }
+            resetSearch();
+        }
+        
+        if(sessionStorage.getItem("favouritesList")){
+            goSearchSpecial();
+            var counter;
+            
+            var storedArrayString = sessionStorage.getItem("favourites");
+            var storedArray = storedArrayString.split(",");
+
+            for(counter = 0; counter<storedArray.length;counter++){
+                if(storedArray[counter]=="1"){
+                    addFavSearch(counter);
+                }
+            }
+            resetSearch();
+        }
+        
+        if(sessionStorage.getItem("favouritesEvents")){
+            var counter;
+            var aux, aux1;
+            var storedArrayString = sessionStorage.getItem("favouritesEvents");
+            var storedArray = storedArrayString.split(",");
+            
+            storedArrayString = sessionStorage.getItem("favouritesEventsX");
+            var storedArrayX = storedArrayString.split(",");
+
+            for(counter = 0; counter<storedArray.length;counter++){
+                aux = parseInt(storedArray[counter]);
+                aux1 = storedArrayX[counter];
+                addFav(aux,aux1);
+            }
+            resetSearch();
+        }
+        
+        verifyFav();
+        
+        var theme;
+        
+        function color(){
+            theme = sessionStorage.getItem("contrast");
+            if (theme==0){
+               document.getElementById("fav").style.backgroundColor = "black";
+               document.getElementById("main").style.backgroundColor = "black";   
+               document.getElementById("searchMenu").style.backgroundColor = "black";   
+               document.getElementById("publictransports").style.backgroundColor = "black";
+               document.getElementById("buyTransportScreen").style.backgroundColor = "black";
+               document.getElementById("myticketsDisplay").style.backgroundColor = "black";
+               document.getElementById("myticketsM").style.backgroundColor = "black";
+               document.getElementById("myticketsB").style.backgroundColor = "black";
+               document.getElementById("myticketsT").style.backgroundColor = "black";
+               document.getElementById("myticketsE").style.backgroundColor = "black";
+               document.getElementById("transportTicket").style.backgroundColor = "black";
+               document.getElementById("buyingmenu").style.backgroundColor = "black";
+               document.getElementById("buyingcontactless").style.backgroundColor = "black";
+               document.getElementById("buyingmbway").style.backgroundColor = "black";
+               document.getElementById("voucherdisplay").style.backgroundColor = "black";
+               document.getElementById("buyingVoucher").style.backgroundColor = "black";
+               document.getElementById("friendEvents").style.backgroundColor = "black";
+               document.getElementById("buyTicket").style.backgroundColor = "black";
+               document.getElementById("localEvents").style.backgroundColor = "black";
+            }
+            else{
+               document.getElementById("fav").style.backgroundColor = "#e2c8b3";
+               document.getElementById("main").style.backgroundColor = "#e2c8b3";   
+               document.getElementById("searchMenu").style.backgroundColor = "#e2c8b3";   
+               document.getElementById("publictransports").style.backgroundColor = "#e2c8b3";
+               document.getElementById("buyTransportScreen").style.backgroundColor = "#e2c8b3";
+               document.getElementById("myticketsDisplay").style.backgroundColor = "#e2c8b3";
+               document.getElementById("myticketsM").style.backgroundColor = "#e2c8b3";
+               document.getElementById("myticketsB").style.backgroundColor = "#e2c8b3";
+               document.getElementById("myticketsT").style.backgroundColor = "#e2c8b3";
+               document.getElementById("myticketsE").style.backgroundColor = "#e2c8b3";
+               document.getElementById("transportTicket").style.backgroundColor = "#e2c8b3";
+               document.getElementById("buyingmenu").style.backgroundColor = "#e2c8b3";
+               document.getElementById("buyingcontactless").style.backgroundColor = "#e2c8b3";
+               document.getElementById("buyingmbway").style.backgroundColor = "#e2c8b3";
+               document.getElementById("voucherdisplay").style.backgroundColor = "#e2c8b3";
+               document.getElementById("buyingVoucher").style.backgroundColor = "#e2c8b3";
+               document.getElementById("friendEvents").style.backgroundColor = "#e2c8b3";
+               document.getElementById("buyTicket").style.backgroundColor = "#e2c8b3";
+               document.getElementById("localEvents").style.backgroundColor = "#e2c8b3"; 
+                
+            }
+        }
+        
+        var catALL = '<div id="drop" onclick="openclosediv(\'friendsCat\');">V</div>'+
+        '                        <div id ="back" onclick="closediv(\'friendEvents\');">;;<img src = "back.png" width="15"></div>'+
+        '                        <div id=tableTop onclick="openclosediv(\'friendsCat\');">Todos</div>'+
+        '                        <div id="friendsCat">'+
+        '                                <div class="friendChoice" onclick="closediv(\'friendsCat\')">Todos</div>'+
+        '                                <div class="friendChoice" id="cat1" onclick="changeCat(\'cat1\')">Família</div>'+
+        '                                <div class="friendChoice" id="cat2" onclick="changeCat(\'cat2\')">Conhecidos</div>'+
+        '                                <div class="friendChoice" id="cat3" onclick="changeCat(\'cat3\')">BFFs</div>'+
+        '                                <div class="friendChoice" id="cat4" onclick="changeCat(\'cat4\')">Trabalho</div>'+
+        '                                <div class="friendChoice" id="cat5" onclick="changeCat(\'cat5\')">Faculdade</div>'+
+        '                        </div>'+
+        '                        <div id = "evList">'+
+        '                            <div class= "eventEL" onclick="openEvent(17);"><b>History Trivia Night</b><br>14/05/19 <br> Hallets<br><img src="fp7.png" width="20px"><img src="fp8.png" width="20px"><img src="fp3.png" width="20px"><img class="lilheart" src="tryheart2.png" width="20px"></div>'+
+        '                           '+
+        '                            <div class= "eventEL" onclick="openEvent(13);"><b>F.C. Harlem x Scotia</b><br>14/05/19 <br> Octagonal Footbal<br><img src="fp1.png" width="20px"><img src="fp3.png" width="20px"><img src="fp5.png" width="20px"><img class="lilheart" src="tryheart2.png" width="20px"></div>'+
+        '                             '+
+        '                            <div class= "eventEL"onclick="openEvent(7);"><b>Exposição: "The Waves"</b><br>15/05/19 <br> Guggenhewitt'+
+        '                            <br><img src="fp2.png" width="20px"><img src="fp4.png" width="20px"><img src="fp6.png" width="20px"><img src="fp7.png" width="20px"><img class="lilheart" src="tryheart2.png" width="20px"></div>'+
+        '                            '+
+        '                            <div class= "eventEL" onclick="openEvent(21);"><b>O Homem e a Lua</b><br>25/05/19 <br> Julliard<br><img src="fp2.png" width="20px"><img src="fp6.png" width="20px"><img src="fp4.png" width="20px"><img class="lilheart" src="tryheart2.png" width="20px"></div>'+
+        '                            '+
+        '                            <div class= "eventEL" onclick="openEvent(26);"><b>Festival Indie NYU</b><br>07/06/19 <br> Opera House<br><img src="fp5.png" width="20px"><img class="lilheart" src="tryheart2.png" width="20px"></div>'+
+        '                            '+
+        '                            <div class= "eventEL" onclick="openEvent(8);"><b>Tour de Street Art</b><br>09/06/19 <br> Central Park Zoo'+
+        '                            <br><img src="fp1.png" width="20px"><img src="fp2.png" width="20px"><img class="lilheart" src="tryheart2.png" width="20px"></div>'+
+        '                            '+
+        '                            <div class= "eventEL" onclick="openEvent(31);"><b>Troca de Cartas Pokemon</b><br>20/06/19 <br>Starbucks<br><img src="fp3.png" width="20px"><img src="fp4.png" width="20px"><img src="fp8.png" width="20px"></div>    '+
+        '                        </div>';
+        
+        
+        var catFAM = '<div id="drop" onclick="openclosediv(\'friendsCat\');">V</div>'+
+        '                        <div id ="back" onclick="closediv(\'friendEvents\');">;;<img src = "back.png" width="15"></div>'+
+        '                        <div id=tableTop onclick="openclosediv(\'friendsCat\');">Família</div>'+
+        '                        <div id="friendsCat">'+
+        '                                <div class="friendChoice" onclick="closediv(\'friendsCat\')">Família</div>'+
+        '                                <div class="friendChoice" id="cat1" onclick="changeCat(\'cat1\')">Todos</div>'+
+        '                                <div class="friendChoice" id="cat2" onclick="changeCat(\'cat2\')">Conhecidos</div>'+
+        '                                <div class="friendChoice" id="cat3" onclick="changeCat(\'cat3\')">BFFs</div>'+
+        '                                <div class="friendChoice" id="cat4" onclick="changeCat(\'cat4\')">Trabalho</div>'+
+        '                                <div class="friendChoice" id="cat5" onclick="changeCat(\'cat5\')">Faculdade</div>'+
+        '                        </div>'+
+        '                        <div id = "evList">'+
+        '                            <div class= "eventEL" onclick="openEvent(13);"><b>F.C. Harlem x Scotia</b><br>14/05/19 <br> Octagonal Footbal<br><img src="fp1.png" width="20px"><img class="lilheart" src="tryheart2.png" width="20px"></div>'+
+        '                             '+
+        '                            <div class= "eventEL"onclick="openEvent(7);"><b>Exposição "The Waves"</b><br>15/05/19 <br> Guggenhewitt'+
+        '                            <br><img src="fp7.png" width="20px"><img class="lilheart" src="tryheart2.png" width="20px"></div>'+
+        '                            '+
+        '                            <div class= "eventEL" onclick="openEvent(21);"><b>O Homem e a Lua</b><br>25/05/19 <br> Julliard<br><img src="fp6.png" width="20px"><img class="lilheart" src="tryheart2.png" width="20px"></div>'+
+        '                              '+
+        '                        </div>';
+        
+        
+        var catBFF = '<div id="drop" onclick="openclosediv(\'friendsCat\');">V</div>'+
+        '                        <div id ="back" onclick="closediv(\'friendEvents\');">;;<img src = "back.png" width="15"></div>'+
+        '                        <div id=tableTop onclick="openclosediv(\'friendsCat\');">BFFs</div>'+
+        '                        <div id="friendsCat">'+
+        '                                <div class="friendChoice" onclick="closediv(\'friendsCat\')">BFFs</div>'+
+        '                                <div class="friendChoice" id="cat1" onclick="changeCat(\'cat1\')">Família</div>'+
+        '                                <div class="friendChoice" id="cat2" onclick="changeCat(\'cat2\')">Conhecidos</div>'+
+        '                                <div class="friendChoice" id="cat3" onclick="changeCat(\'cat3\')">Todos</div>'+
+        '                                <div class="friendChoice" id="cat4" onclick="changeCat(\'cat4\')">Trabalho</div>'+
+        '                                <div class="friendChoice" id="cat5" onclick="changeCat(\'cat5\')">Faculdade</div>'+
+        '                        </div>'+
+        '                        <div id = "evList">'+
+        '                            <div class= "eventEL" onclick="openEvent(17);"><b>History Trivia Night</b><br>14/05/19 <br> Hallets<br><img src="fp7.png" width="20px"><img src="fp8.png" width="20px"><img src="fp3.png" width="20px"><img class="lilheart" src="tryheart2.png" width="20px"></div>'+
+        '                           '+
+        '                            <div class= "eventEL" onclick="openEvent(13);"><b> F.C. Harlem x Scotia</b><br>14/05/19 <br> Octagonal Footbal<br><img src="fp3.png" width="20px"><img class="lilheart" src="tryheart2.png" width="20px"></div>'+
+        '                             '+
+        '                            <div class= "eventEL"onclick="openEvent(7);"><b> Exposição "The Waves"</b><br>15/05/19 <br> Guggenhewitt'+
+        '                            <br><img src="fp7.png" width="20px"><img class="lilheart" src="tryheart2.png" width="20px"></div>'+
+        '                            '+
+        '                            <div class= "eventEL" onclick="openEvent(31);"><b>Troca de Cartas Pokemon</b><br>20/06/19 <br>Starbucks<br><img src="fp3.png" width="20px"><img class="lilheart" src="tryheart2.png" width="20px"><img src="fp8.png" width="20px"></div>    '+
+        '                        </div>';
+	
+
+	
+        var catTRA = '<div id="drop" onclick="openclosediv(\'friendsCat\');">V</div>'+
+        '                        <div id ="back" onclick="closediv(\'friendEvents\');">;;<img src = "back.png" width="15"></div>'+
+        '                        <div id=tableTop onclick="openclosediv(\'friendsCat\');">Trabalho</div>'+
+        '                        <div id="friendsCat">'+
+        '                                <div class="friendChoice" onclick="closediv(\'friendsCat\')">Trabalho</div>'+
+        '                                <div class="friendChoice" id="cat1" onclick="changeCat(\'cat1\')">Família</div>'+
+        '                                <div class="friendChoice" id="cat2" onclick="changeCat(\'cat2\')">Conhecidos</div>'+
+        '                                <div class="friendChoice" id="cat3" onclick="changeCat(\'cat3\')">BFFs</div>'+
+        '                                <div class="friendChoice" id="cat4" onclick="changeCat(\'cat4\')">Todos</div>'+
+        '                                <div class="friendChoice" id="cat5" onclick="changeCat(\'cat5\')">Faculdade</div>'+
+        '                        </div>'+
+        '                        <div id = "evList">'+
+        '                            <div class= "eventEL" onclick="openEvent(17);"><b>History Trivia Night</b><br>14/05/19 <br> Hallets<br><img src="fp8.png" width="20px"><img class="lilheart" src="tryheart2.png" width="20px"></div>'+
+        '                             '+
+        '                            <div class= "eventEL"onclick="openEvent(7);"><b>Exposição "The Waves"</b><br>15/05/19 <br> Guggenhewitt'+
+        '                            <br><img src="fp2.png" width="20px"><img src="fp4.png" width="20px"><img class="lilheart" src="tryheart2.png" width="20px"></div>'+
+        '                            '+
+        '                            <div class= "eventEL" onclick="openEvent(31);"><b>Troca de Cartas Pokemon</b><br>20/06/19 <br>Starbucks<br><img src="fp4.png" width="20px"><img src="fp8.png" width="20px"><img class="lilheart" src="tryheart2.png" width="20px"></div>    '+
+        '                        </div>';
+	
+        
+        var catFAC = '<div id="drop" onclick="openclosediv(\'friendsCat\');">V</div>'+
+        '                        <div id ="back" onclick="closediv(\'friendEvents\');">;;<img src = "back.png" width="15"></div>'+
+        '                        <div id=tableTop onclick="openclosediv(\'friendsCat\');">Faculdade</div>'+
+        '                        <div id="friendsCat">'+
+        '                                <div class="friendChoice" onclick="closediv(\'friendsCat\')">Faculdade</div>'+
+        '                                <div class="friendChoice" id="cat1" onclick="changeCat(\'cat1\')">Família</div>'+
+        '                                <div class="friendChoice" id="cat2" onclick="changeCat(\'cat2\')">Conhecidos</div>'+
+        '                                <div class="friendChoice" id="cat3" onclick="changeCat(\'cat3\')">BFFs</div>'+
+        '                                <div class="friendChoice" id="cat4" onclick="changeCat(\'cat4\')">Trabalho</div>'+
+        '                                <div class="friendChoice" id="cat5" onclick="changeCat(\'cat5\')">Todos</div>'+
+        '                        </div>'+
+        '                        <div id = "evList">'+
+        '                            <div class= "eventEL" onclick="openEvent(17);"><b>History Trivia Night</b><br>14/05/19 <br> Hallets</b><br><img src="fp3.png" width="20px"><img class="lilheart" src="tryheart2.png" width="20px"></div>'+
+        '                           '+
+        '                            <div class= "eventEL" onclick="openEvent(13);"><b>F.C. Harlem x Scotia</b><br>14/05/19 <br> Octagonal Footbal<br><img src="fp3.png" width="20px"><img class="lilheart" src="tryheart2.png" width="20px"></div>'+
+        '                             '+
+        '                            <div class= "eventEL"onclick="openEvent(7);"><b>Exposição "The Waves"</b><br>15/05/19 <br> Guggenhewitt'+
+        '                            <br><img src="fp2.png" width="20px"><img class="lilheart" src="tryheart2.png" width="20px"></div>'+
+        '                            '+
+        '                            <div class= "eventEL" onclick="openEvent(21);"><b>O Homem e a Lua</b><br>25/05/19 <br> Julliard<br><img src="fp2.png" width="20px"><img class="lilheart" src="tryheart2.png" width="20px"></div>'+
+        '                            '+
+        '                            <div class= "eventEL" onclick="openEvent(8);"><b>Tour de Street Art</b><br>09/06/19 <br> Central Park Zoo'+
+        '                            <br><img src="fp2.png" width="20px"><img class="lilheart" src="tryheart2.png" width="20px"></div>'+
+        '                            '+
+        '                            <div class= "eventEL" onclick="openEvent(31);"><b>Troca de Cartas Pokemon</b><br>20/06/19 <br>Starbucks<br><img src="fp3.png" width="20px"><img class="lilheart" src="tryheart2.png" width="20px"></div>    '+
+        '                        </div>';
+	
+
+        
+        var catCON = '<div id="drop" onclick="openclosediv(\'friendsCat\');">V</div>'+
+        '                        <div id ="back" onclick="closediv(\'friendEvents\');">;;<img src = "back.png" width="15"></div>'+
+        '                        <div id=tableTop onclick="openclosediv(\'friendsCat\');">Conhecidos</div>'+
+        '                        <div id="friendsCat">'+
+        '                                <div class="friendChoice" onclick="closediv(\'friendsCat\')">Conhecidos</div>'+
+        '                                <div class="friendChoice" id="cat1" onclick="changeCat(\'cat1\')">Família</div>'+
+        '                                <div class="friendChoice" id="cat2" onclick="changeCat(\'cat2\')">Todos</div>'+
+        '                                <div class="friendChoice" id="cat3" onclick="changeCat(\'cat3\')">BFFs</div>'+
+        '                                <div class="friendChoice" id="cat4" onclick="changeCat(\'cat4\')">Trabalho</div>'+
+        '                                <div class="friendChoice" id="cat5" onclick="changeCat(\'cat5\')">Faculdade</div>'+
+        '                        </div>'+
+        '                        <div id = "evList">'+
+        '                           '+
+        '                            <div class= "eventEL" onclick="openEvent(13);"><b>F.C. Harlem x Scotia</b><br>14/05/19 <br> Octagonal Footbal<br><img src="fp5.png" width="20px"><img class="lilheart" src="tryheart2.png" width="20px"></div>'+
+        '                            '+
+        '                            <div class= "eventEL" onclick="openEvent(26);"><b>Festival Indie NYU</b><br>07/06/19 <br> Opera House<br><img src="fp5.png" width="20px"><img class="lilheart" src="tryheart2.png" width="20px"></div>'+
+        '                               '+
+        '                        </div>';
+
+
+
+        function changeCat(catid){
+            catName = document.getElementById(catid).innerHTML;
+            if (catName == "Família"){
+                document.getElementById("friendEvents").innerHTML = catFAM;
+            }
+            else if (catName == "Trabalho"){
+                document.getElementById("friendEvents").innerHTML = catTRA;
+            }
+            else if (catName == "BFFs"){
+                document.getElementById("friendEvents").innerHTML = catBFF;
+            }
+            else if (catName == "Faculdade"){
+                document.getElementById("friendEvents").innerHTML = catFAC;
+            }
+            else if (catName == "Conhecidos"){
+                document.getElementById("friendEvents").innerHTML = catCON;
+            }
+            else if (catName == "Todos"){
+                document.getElementById("friendEvents").innerHTML = catALL;
+            }
+        }
+
+        
+        
+         function goHome(){
+            sessionStorage.setItem("shareStatus",activityStatus);
+            window.open("index.html","_self");
+        }
+        
+        function lock(){
+            var lockscreen = document.getElementById("lockscreen");
+            if(lockscreen.style.display=="none"){
+                lockscreen.style.display="block";
+                closeAllpopUPS();
+            }
+            else{
+                lockscreen.style.display="none";
+            }
+        }
+        
+        //funcoes globais open close PLEASE USE THEM
+        function opendiv(divname){
+            document.getElementById(divname).style.display = "block";
+        }
+        
+        function closediv(divname){
+            document.getElementById(divname).style.display = "none";
+        }
+        
+        function openclosediv(divname){
+            div = document.getElementById(divname);
+            if (div.style.display=="none"){
+              div.style.display="block";
+            }
+            else {
+              div.style.display="none";
+            }
+        }
+
+        
+        //
+        
+        var special = 0;
+        
+        function removeAccents(str) {
+            var accents    = 'ÀÁÂÃÄÅàáâãäåÒÓÔÕÕÖØòóôõöøÈÉÊËèéêëðÇçÐÌÍÎÏìíîïÙÚÛÜùúûüÑñŠšŸÿýŽž';
+              var accentsOut = "AAAAAAaaaaaaOOOOOOOooooooEEEEeeeeeCcDIIIIiiiiUUUUuuuuNnSsYyyZz";
+              str = str.split('');
+              var strLen = str.length;
+              var i, x;
+              for (i = 0; i < strLen; i++) {
+                if ((x = accents.indexOf(str[i])) != -1) {
+                  str[i] = accentsOut[x];
+                }
+            }
+            return str.join('');
+        }
+        
+        function goSearch(){
+            clearSearch();
+            disableVoice();
+            
+            
+            var textToSearch = document.getElementById("searchTextExt").value;
+            if(textToSearch == ""){
+               return;
+            }
+            document.getElementById("tableCategories").style.display = "none";
+            document.getElementById("evListVertical").style.display = "block";
+            
+            document.getElementById("searchText").value = textToSearch;
+            var lower = textToSearch.toLowerCase();
+            var listlower;
+            var i,j;
+            var curlistname;
+            
+            lower = removeAccents(lower);
+            
+            
+            for(j=0;j<listNames.length;j++){
+                curlistname = listNames[j];
+                
+                for(i=0;i<curlistname.length;i++){
+                    listlower = curlistname[i].toLowerCase();
+                    listlower = removeAccents(listlower);
+                    if(listlower.includes(lower)){
+                        searchedList.push(curlistname[i]);
+                    }
+                }
+
+            }
+                
+            showEvents();
+            
+        }
+        
+        function goSearchSpecial(){
+            clearSearch();
+            disableVoice();
+            
+            var textToSearch = "";
+            
+            var i,j;
+            var curlistname;
+            
+            for(j=0;j<listNames.length;j++){
+                curlistname = listNames[j];
+                
+                for(i=0;i<curlistname.length;i++){
+                    if(curlistname[i].includes(textToSearch)){
+                        searchedList.push(curlistname[i]);
+                    }
+                }
+
+            }
+                
+            showEvents();
+            
+        }
+        
+        function resetSearch(){
+            document.getElementById("curCat").src = "//:0";
+            document.getElementById("evListVertical").style.display = "none";
+            document.getElementById("tableCategories").style.display = "block";
+            listNames = [event_names];
+            resetText();
+            disableVoice();
+            special = 0;
+        }
+        
+        function enableVoice(){
+            if(document.getElementById("micbtn").style.borderStyle == "inset"){
+                disableVoice();
+            }
+            else{
+                resetText();
+                if(special == 1){
+                    goSearchSpecial();
+                }
+                else{
+                    resetSearch();
+                }
+                document.getElementById("searchTextExt").style.display = "block";
+                document.getElementById("micbtn").style.borderStyle = "inset";
+            }
+        }
+        
+        function disableVoice(){
+            document.getElementById("searchTextExt").style.display = "none";
+            document.getElementById("micbtn").style.borderStyle = "outset";
+        }
+        
+        function showEvents(){
+            if(searchedList.length==0){
+                document.getElementById("evListVertical").innerHTML = "<span font-size='10pt'><em><b>Vazio</b></em> </span>";
+                return;
+            }
+            
+            var numEvents;
+            
+            removeDuplicateUsingSet();
+            
+            document.getElementById("evListVertical").innerHTML = "";
+            forShowEvents();
+            
+        }
+        
+        function forShowEvents(){
+            for(numEvents=0; numEvents<searchedList.length; numEvents++){
+                createNode(numEvents);
+            }
+        }
+    
+
+         
+        function createNode(param1){
+            var index = getIndex(searchedList[param1]);
+            var heartSrc;
+            
+            if(favourites[index]==0){
+                heartSrc = 'tryheart2.png';
+            } else {
+                heartSrc = 'tryheart2col.png';
+            }
+            
+            document.getElementById("evListVertical").innerHTML += " <div class= 'eventEL' onclick='openEvent("+index+");'><b>"+event_names[index]+"</b><br>"+event_dates[index]+"<br>"+event_location[index]+"<br></div> <img class='lilheart' id='heart"+index+"'src="+heartSrc+" width='20px' onclick='addFavSearch("+index+");'> ";
+            
+            
+        }
+        
+        
+        function getIndex(stringToFind){
+            var i = 0;
+            for(i=0;i<event_names.length;i++){
+                if(stringToFind == event_names[i]){
+                    return i;
+                }
+            }
+            return 0;
+        }
+        
+        
+        function addFavSearch(index){
+            if(favourites[index]==1){
+                removeFavSearch(index);
+            } else {
+                document.getElementById('heart'+index).src = 'tryheart2col.png';
+                favourites[index]=1;
+                
+                var node = document.createElement("A");
+                
+                
+                var textnode = document.createTextNode(event_names[index]);
+                if(event_names[index] == 'Treino Aberto: Greenwitch Warriors'){
+                    textnode = document.createTextNode('Treino: Greenwitch Warriors');
+                }
+                if(event_names[index] == 'Futebol: F.C. Harlem x New Scotia'){
+                    textnode = document.createTextNode('Futebol: Harlem x New Scot');
+                }
+                if(event_names[index] == 'Palestra: o Valor da Arte Moderna'){
+                    textnode = document.createTextNode('Palestra: Arte Moderna');
+                }
+                if(event_names[index] == 'Lançamento Novo Album: The Fly'){
+                    textnode = document.createTextNode('Lançamento Album: The Fly');
+                }
+                if(event_names[index] == 'Vinho e Queijos de Lower Manhattan'){
+                    textnode = document.createTextNode('Vinho e Quejos Manhattan');
+                }
+                if(event_names[index] == 'Aula de Pintura com Guilia Grant'){
+                    textnode = document.createTextNode('Pintura com Guilia Grant');
+                }
+                node.appendChild(textnode);
+                node.id = 'added'+index; 
+                document.getElementById("favouritesmenu").appendChild(node);
+                document.getElementById('added'+index).onclick = function(){ openEvent(index); };
+                
+                var nodeX = document.createElement("A");                 
+                var textnodeX = document.createTextNode("X");         
+                nodeX.appendChild(textnodeX);
+                nodeX.appendChild(textnodeX);
+                nodeX.id = 'removed'+index;
+                document.getElementById("removeX").appendChild(nodeX);
+                
+                document.getElementById('removed'+index).onclick = function(){ removeFavSearch(index); };
+            }
+            verifyFav();
+            
+            sessionStorage.setItem("favourites", favourites);
+            
+        }
+        
+        function removeFavSearch(index){
+            searchCat(event_category[index]);
+            document.getElementById('heart'+index).src = "tryheart2.png";
+            favourites[index]=0;
+            document.getElementById('added'+index).remove();
+            document.getElementById('removed' + index).remove();
+            verifyFav();
+            
+            sessionStorage.setItem("favourites", favourites);
+        }
+        
+        
+        
+        function addFav(index,heart){
+            if(favEv.includes(index)){
+                remove(heart,index);
+            } else {
+                document.getElementById(heart).src = 'tryheart2col.png';
+                favEv.push(index);
+                favName.push(heart);
+                
+                var node = document.createElement("A");                 
+                var textnode = document.createTextNode(event_names[index]);
+                node.appendChild(textnode);
+                node.id = 'added'+index; 
+                document.getElementById("favouritesmenu").appendChild(node);
+                document.getElementById('added'+index).onclick = function(){ openEvent(index); };
+                
+                var nodeX = document.createElement("A");                 
+                var textnodeX = document.createTextNode("X");         
+                nodeX.appendChild(textnodeX);
+                nodeX.appendChild(textnodeX);
+                nodeX.id = 'removed'+index;
+                document.getElementById("removeX").appendChild(nodeX);
+                
+                document.getElementById('removed'+index).onclick = function(){ remove(heart,index); };
+            }
+            verifyFav();
+            
+            sessionStorage.setItem("favouritesEvents", favEv);
+            sessionStorage.setItem("favouritesEventsX", favName);
+            
+        }
+        
+        function remove(heart,index){
+            var indexi = favEv.indexOf(index);
+            if (indexi > -1) {
+              favEv.splice(indexi, 1);
+              favName.splice(indexi, 1);
+            }
+            document.getElementById(heart).src = "tryheart2.png";
+            document.getElementById('added' + index).remove();
+            document.getElementById('removed' + index).remove();
+            
+            sessionStorage.setItem("favouritesEvents", favEv);
+            sessionStorage.setItem("favouritesEventsX", favName);
+            
+            verifyFav();
+        }
+        
+        function verifyFav(){
+            var i;
+            for(i=0;i<favourites.length;i++){
+                if(favourites[i]==1){
+                    document.getElementById("favouritesmenu").style.width="180px"
+                    document.getElementById("favempty").style.display="none";
+                    return;
+                }
+            }
+            if(favEv.length>0){
+               document.getElementById("favouritesmenu").style.width="180px"
+               document.getElementById("favempty").style.display="none";
+                return;
+            }
+            document.getElementById("favouritesmenu").style.width="190px";
+            document.getElementById("favempty").style.display="block";
+        }
+        
+        function contains(heart){
+            var i;
+            for(i=0;i<favEv.length;i++){
+                if(heart == favEv[i]){
+                    return true;
+                }
+            }
+            return false;
+        }
+        
+        function OnScroll(div) {
+            var div1 = document.getElementById("favouritesmenu");
+            div1.scrollTop = div.scrollTop;
+        }
+        
+        
+        var currentEv;
+        
+        function openEvent(number){
+            document.getElementById("optionvoucher").onclick = hasVoucherVerifEv;
+           document.getElementById("normalTickets").value = "";
+            document.getElementById("seniorTickets").value = "";
+            document.getElementById("childTickets").value = "";
+
+            getTotalPriceEv();
+            
+            currentEv = number;
+            name = event_names[number];
+            time = event_dates[number];
+            place = event_location[number];
+            document.getElementById("evName").innerHTML = name;
+            document.getElementById("placeandtime").innerHTML = place+' - '+time+'/2019';
+            document.getElementById("buyTicket").style.display = "block";
+            
+        }
+        
+        function searchCat(category){
+            special = 1;
+            if(category == 'art'){
+                document.getElementById("curCat").src = "arte2.png";
+                listNames = [event_art];
+            } else if (category == 'cinema') {
+                document.getElementById("curCat").src = "cinema2.png";
+                listNames = [event_cinema];
+            } else if (category == 'theatre') {
+                document.getElementById("curCat").src = "teatro2.png";
+                listNames = [event_theatre];
+            } else if (category == 'music') {
+                document.getElementById("curCat").src = "music2.png";
+                listNames = [event_music];
+            } else if (category == 'sport') {
+                document.getElementById("curCat").src = "sport2.png";
+                listNames = [event_sport];
+            } else if (category == 'night') {
+                document.getElementById("curCat").src = "night2.png";
+                listNames = [event_night];
+            } else if (category == 'tour') {
+                document.getElementById("curCat").src = "tour2.png";
+                listNames = [event_tour];
+            } else if (category == 'other') {
+                document.getElementById("curCat").src = "other2.png";
+                listNames = [event_other];
+            }
+            document.getElementById("tableCategories").style.display = "none";
+            document.getElementById("evListVertical").style.display = "block";
+            goSearchSpecial();
+        }
+        
+        function removeDuplicateUsingSet(){
+            var unique_array = Array.from(new Set(searchedList));
+            searchedList = unique_array;
+        }   
+        
+        function startTyping(){
+            document.getElementById("searchText").click();
+        }
+        
+        function resetText(){
+            document.getElementById("searchText").value = "";
+            document.getElementById("searchTextExt").value = "";
+        }
+        
+        function clearSearch(){
+            document.getElementById("evListVertical").innerHTML = "";
+            searchedList = [];
+        }
+        
+        function closeMyTickets() {
+            document.getElementById("myticketsDisplay").style.display = "none";
+            document.getElementById("myticketsT").style.display = "none";
+            document.getElementById("myticketsM").style.display = "none";
+            document.getElementById("myticketsB").style.display = "none";
+            document.getElementsByClassName("myTiconM")[0].style.background = "cornflowerblue";
+            document.getElementsByClassName("myTiconM")[1].style.background = "cornflowerblue";
+            document.getElementsByClassName("myTiconM")[2].style.background = "cornflowerblue";
+            document.getElementsByClassName("myTiconM")[3].style.background = "cornflowerblue";
+            document.getElementById("myticketsT").style.display = "none";
+            document.getElementsByClassName("myTiconT")[0].style.background = "cornflowerblue";
+            document.getElementsByClassName("myTiconT")[1].style.background = "cornflowerblue";
+            document.getElementsByClassName("myTiconT")[2].style.background = "cornflowerblue";
+            document.getElementsByClassName("myTiconT")[3].style.background = "cornflowerblue";
+            document.getElementsByClassName("myTiconB")[0].style.background = "cornflowerblue";
+            document.getElementsByClassName("myTiconB")[1].style.background = "cornflowerblue";
+            document.getElementsByClassName("myTiconB")[2].style.background = "cornflowerblue";
+            document.getElementsByClassName("myTiconB")[3].style.background = "cornflowerblue";
+            document.getElementById("myticketsE").style.display = "none";
+            document.getElementsByClassName("myTiconE")[0].style.background = "cornflowerblue";
+            document.getElementsByClassName("myTiconE")[1].style.background = "cornflowerblue";
+            document.getElementsByClassName("myTiconE")[2].style.background = "cornflowerblue";
+            document.getElementsByClassName("myTiconE")[3].style.background = "cornflowerblue";
+             
+
+        }
+        
+
+        function openMyTicketsM() {
+            document.getElementById("myticketsM").style.display = "block";
+            document.getElementsByClassName("myTiconM")[0].style.background = "green";
+            document.getElementsByClassName("myTiconM")[1].style.background = "green";
+            document.getElementsByClassName("myTiconM")[2].style.background = "green";
+            document.getElementsByClassName("myTiconM")[3].style.background = "green";
+            document.getElementById("myticketsT").style.display = "none";
+            document.getElementsByClassName("myTiconT")[0].style.background = "cornflowerblue";
+            document.getElementsByClassName("myTiconT")[1].style.background = "cornflowerblue";
+            document.getElementsByClassName("myTiconT")[2].style.background = "cornflowerblue";
+            document.getElementsByClassName("myTiconT")[3].style.background = "cornflowerblue";
+            document.getElementById("myticketsB").style.display = "none";
+            document.getElementsByClassName("myTiconB")[0].style.background = "cornflowerblue";
+            document.getElementsByClassName("myTiconB")[1].style.background = "cornflowerblue";
+            document.getElementsByClassName("myTiconB")[2].style.background = "cornflowerblue";
+            document.getElementsByClassName("myTiconB")[3].style.background = "cornflowerblue";
+            document.getElementsByClassName("myTiconE")[0].style.background = "cornflowerblue";
+            document.getElementsByClassName("myTiconE")[1].style.background = "cornflowerblue";
+            document.getElementsByClassName("myTiconE")[2].style.background = "cornflowerblue";
+            document.getElementsByClassName("myTiconE")[3].style.background = "cornflowerblue";
+            document.getElementById("myticketsE").style.display = "none";
+
+
+        }
+        
+        function openMyTicketsT() {
+            document.getElementById("myticketsM").style.display = "none";
+            document.getElementsByClassName("myTiconM")[0].style.background = "cornflowerblue";
+            document.getElementsByClassName("myTiconM")[1].style.background = "cornflowerblue";
+            document.getElementsByClassName("myTiconM")[2].style.background = "cornflowerblue";
+                        document.getElementsByClassName("myTiconM")[3].style.background = "cornflowerblue";
+            document.getElementById("myticketsT").style.display = "block";
+             document.getElementsByClassName("myTiconT")[0].style.background = "green";
+            document.getElementsByClassName("myTiconT")[1].style.background = "green";
+            document.getElementsByClassName("myTiconT")[2].style.background = "green";
+                        document.getElementsByClassName("myTiconT")[3].style.background = "green";
+            document.getElementById("myticketsB").style.display = "none";
+             document.getElementsByClassName("myTiconB")[0].style.background = "cornflowerblue";
+            document.getElementsByClassName("myTiconB")[1].style.background = "cornflowerblue";
+            document.getElementsByClassName("myTiconB")[2].style.background = "cornflowerblue";
+                        document.getElementsByClassName("myTiconB")[3].style.background = "cornflowerblue";
+            document.getElementsByClassName("myTiconE")[0].style.background = "cornflowerblue";
+            document.getElementsByClassName("myTiconE")[1].style.background = "cornflowerblue";
+            document.getElementsByClassName("myTiconE")[2].style.background = "cornflowerblue";
+            document.getElementsByClassName("myTiconE")[3].style.background = "cornflowerblue";
+                        document.getElementById("myticketsE").style.display = "none";
+           
+        }
+
+        function openMyTicketsB() {
+            document.getElementById("myticketsM").style.display = "none";
+            document.getElementsByClassName("myTiconM")[0].style.background = "cornflowerblue";
+            document.getElementsByClassName("myTiconM")[1].style.background = "cornflowerblue";
+            document.getElementsByClassName("myTiconM")[2].style.background = "cornflowerblue";
+            document.getElementsByClassName("myTiconM")[3].style.background = "cornflowerblue";
+
+            document.getElementById("myticketsT").style.display = "none";
+             document.getElementsByClassName("myTiconT")[0].style.background = "cornflowerblue";
+            document.getElementsByClassName("myTiconT")[1].style.background = "cornflowerblue";
+            document.getElementsByClassName("myTiconT")[2].style.background = "cornflowerblue";
+                        document.getElementsByClassName("myTiconT")[3].style.background = "cornflowerblue";
+
+            document.getElementById("myticketsB").style.display = "block";
+             document.getElementsByClassName("myTiconB")[0].style.background = "green";
+            document.getElementsByClassName("myTiconB")[1].style.background = "green";
+            document.getElementsByClassName("myTiconB")[2].style.background = "green";
+            document.getElementsByClassName("myTiconB")[3].style.background = "green";
+            
+            document.getElementsByClassName("myTiconE")[0].style.background = "cornflowerblue";
+            document.getElementsByClassName("myTiconE")[1].style.background = "cornflowerblue";
+            document.getElementsByClassName("myTiconE")[2].style.background = "cornflowerblue";
+            document.getElementsByClassName("myTiconE")[3].style.background = "cornflowerblue";
+
+            document.getElementById("myticketsE").style.display = "none";
+
+        }
+
+        function openMyTicketsE() {
+            document.getElementById("myticketsM").style.display = "none";
+            document.getElementsByClassName("myTiconM")[0].style.background = "cornflowerblue";
+            document.getElementsByClassName("myTiconM")[1].style.background = "cornflowerblue";
+            document.getElementsByClassName("myTiconM")[2].style.background = "cornflowerblue";
+            document.getElementsByClassName("myTiconM")[3].style.background = "cornflowerblue";
+
+            document.getElementById("myticketsT").style.display = "none";
+             document.getElementsByClassName("myTiconT")[0].style.background = "cornflowerblue";
+            document.getElementsByClassName("myTiconT")[1].style.background = "cornflowerblue";
+            document.getElementsByClassName("myTiconT")[2].style.background = "cornflowerblue";
+            document.getElementsByClassName("myTiconT")[3].style.background = "cornflowerblue";
+
+            document.getElementById("myticketsB").style.display = "none";
+            document.getElementsByClassName("myTiconB")[0].style.background = "cornflowerblue";
+            document.getElementsByClassName("myTiconB")[1].style.background = "cornflowerblue";
+            document.getElementsByClassName("myTiconB")[2].style.background = "cornflowerblue";
+            document.getElementsByClassName("myTiconB")[3].style.background = "cornflowerblue";
+            
+            document.getElementById("myticketsE").style.display = "block";
+            document.getElementsByClassName("myTiconE")[0].style.background = "green";
+            document.getElementsByClassName("myTiconE")[1].style.background = "green";
+            document.getElementsByClassName("myTiconE")[2].style.background = "green";
+            document.getElementsByClassName("myTiconE")[3].style.background = "green";
+
+            
+             
+
+        }
+        
+
+        // type of transport for which a ticket is being bought - 1 FOR METRO, 2 FOR TRAIN, 3 FOR BUS, 4 FOR EVENTS
+        var currentTType; 
+
+        // total of tickets of each type (Metro, Train, Bus and Single, Daily, Monthly)
+        var totalTicketsMS = 0 , totalTicketsMD = 0, totalTicketsMM = 0; 
+        var totalTicketsTS = 0, totalTicketsTD = 0, totalTicketsTM = 0;
+        var totalTicketsBS  = 0, totalTicketsBD = 0, totalTicketsBM = 0;
+
+        if(sessionStorage.getItem("totalTicketsMS")){
+           totalTicketsMS = parseInt(sessionStorage.getItem("totalTicketsMS"));
+        }
+        
+        if(sessionStorage.getItem("totalTicketsMD")){
+            totalTicketsMD = parseInt(sessionStorage.getItem("totalTicketsMD"));
+        }
+      
+         if(sessionStorage.getItem("totalTicketsMM")){
+            totalTicketsMM = parseInt(sessionStorage.getItem("totalTicketsMM"));
+        }
+        
+        if(sessionStorage.getItem("totalTicketsTS")){
+            totalTicketsTS = parseInt(sessionStorage.getItem("totalTicketsTS"));
+        }
+        
+        if(sessionStorage.getItem("totalTicketsTD")){
+            totalTicketsTD = parseInt(sessionStorage.getItem("totalTicketsTD"));
+        }
+       
+         if(sessionStorage.getItem("totalTicketsTM")){
+            totalTicketsTM = parseInt(sessionStorage.getItem("totalTicketsTM"));
+        }
+         
+        if(sessionStorage.getItem("totalTicketsBS")){
+            totalTicketsBS = parseInt(sessionStorage.getItem("totalTicketsBS"));
+        }
+        
+        if(sessionStorage.getItem("totalTicketsBD")){
+            totalTicketsBD = parseInt(sessionStorage.getItem("totalTicketsBD"));
+        }
+        
+         if(sessionStorage.getItem("totalTicketsBM")){
+            totalTicketsBM = parseInt(sessionStorage.getItem("totalTicketsBM"));
+        }
+        
+
+        var totalTicketsE = 0;
+        var totalTicketsEN = 0, totalTicketsES = 0, totalTicketsEC = 0;
+        var ticketsEN = [], ticketsES = [], ticketsEC = [];
+        var temp;
+        //localStorage.setItem("quentinTarantino", JSON.stringify(movies));
+        //var retrievedData = localStorage.getItem("quentinTarantino");
+        //var movies2 = JSON.parse(retrievedData);
+        
+        if(sessionStorage.getItem("totalTicketsE")){
+           totalTicketsE = parseInt(sessionStorage.getItem("totalTicketsE"));
+        }
+        
+        if(sessionStorage.getItem("totalTicketsEN")){
+            totalTicketsEN = parseInt(sessionStorage.getItem("totalTicketsEN"));
+        }
+      
+         if(sessionStorage.getItem("totalTicketsES")){
+            totalTicketsES = parseInt(sessionStorage.getItem("totalTicketsES"));
+        }
+        
+        if(sessionStorage.getItem("totalTicketsEC")){
+            totalTicketsEC = parseInt(sessionStorage.getItem("totalTicketsEC"));
+        }
+        
+        if(sessionStorage.getItem("ticketsEN")){
+            temp = sessionStorage.getItem("ticketsEN");
+            ticketsEN = JSON.parse(temp);
+        }
+       
+         if(sessionStorage.getItem("ticketsEC")){
+            temp = sessionStorage.getItem("ticketsEC");
+            ticketsEC = JSON.parse(temp);
+        }
+        
+         if(sessionStorage.getItem("ticketsES")){
+            temp = sessionStorage.getItem("ticketsES");
+            ticketsES = JSON.parse(temp);
+        }
+
+       function buyMetro() {
+          currentTType = 1;
+          openbuyTransportScreen();
+          document.getElementById("singlePrice").innerHTML = "unitário - 1.5 €";
+          document.getElementById("dailyPrice").innerHTML = "diário - 6 €";
+          document.getElementById("monthlyPrice").innerHTML = "mensal - 40 €";
+
+        }
+
+        function buyTrain() {
+          currentTType = 2;
+          openbuyTransportScreen() ;
+          document.getElementById("singlePrice").innerHTML = "unitário - 2 €";
+          document.getElementById("dailyPrice").innerHTML = "diário - 10 €";
+          document.getElementById("monthlyPrice").innerHTML = "mensal - 60 €";
+
+
+        }
+
+        function buyBus() {
+          currentTType = 3;
+          openbuyTransportScreen() ;
+           document.getElementById("singlePrice").innerHTML = "unitário - 1 €";
+          document.getElementById("dailyPrice").innerHTML = "diário - 4 €";
+          document.getElementById("monthlyPrice").innerHTML = "mensal - 30 €";
+        }
+
+        var total,totalE, latesttotal, latesttotalE;
+
+         document.onclick = function getTotalPrice() {
+
+          var singleinput = document.getElementById("singleTickets").value;
+          var dailyinput = document.getElementById("dailyTickets").value;
+          var monthlyinput = document.getElementById("monthlyTickets").value;
+
+          if (currentTType===1){
+            total = singleinput*(1.5) + dailyinput*(6) + monthlyinput*(40);
+          }
+          else if (currentTType===2){
+            total = singleinput*(2) + dailyinput*(10) + monthlyinput*(60);
+          }
+          else if (currentTType===3){
+            total = singleinput*(1) + dailyinput*(4) + monthlyinput*(30);
+          }
+
+
+          document.getElementById("totalpriceNr").innerHTML = total + " €";
+          latesttotal = total;
+
+
+        }
+
+        function getTotalPriceEv() {
+
+          var normalinput = document.getElementById("normalTickets").value;
+          var seniorinput = document.getElementById("seniorTickets").value;
+          var childinput = document.getElementById("childTickets").value;
+
+          totalE = normalinput*(20) + seniorinput*(15) + childinput*(10);
+
+
+          document.getElementById("totalpriceNrEv").innerHTML = totalE + " €";
+          latesttotalE = totalE;
+
+
+        }
+
+       
+
+        function openbuyTransportScreen() {
+            document.getElementById("optionvoucher").onclick = hasVoucherVerif;
+          document.getElementById("buyTransportScreen").style.display = "block";
+           document.getElementById("singleTickets").value = "";
+           document.getElementById("dailyTickets").value = "";
+           document.getElementById("monthlyTickets").value = "";
+        }
+
+        var contactlessPopUps, mbwayPopUps1,mbwayPopUps2;
+
+        function buyContactless(){
+
+          opendiv('buyingcontactless');
+          contactlessPopUps = setTimeout(function confirmPaymentC(){
+
+                document.getElementById("confirmpaymentC").style.display = "block"; 
+
+          }, 2000);
+
+        }
+
+         function stopContactless(){
+
+         clearTimeout(contactlessPopUps);
+
+        }
+
+
+        function buyMBWay(){
+
+          opendiv('buyingmbway');
+          mbwayPopUps1 = setTimeout(function confirmPaymentM(){
+
+                document.getElementById("confirmpaymentM").style.display = "block"; 
+
+          }, 2000);
+
+          var randompayvar = Math.random();
+
+          if( randompayvar < 0.5) {
+
+             mbwayPopUps2 = setTimeout(function paidinMBWay(){
+
+                    addTransportTicket();
+                    closediv('confirmpaymentM');
+                    closediv('buyingmbway');
+                    closediv('buyingmenu');
+
+              }, 6000);
+
+          }
+
+          else {
+
+
+             mbwayPopUps2 = setTimeout(function cancelledinMBWay(){
+
+                  document.getElementById("cancelledinMBWay").style.display = "block"; 
+
+              }, 6000);
+
+          }
+
+        }
+
+         function stopMBWay(){
+
+         	clearTimeout(mbwayPopUps1);
+          	clearTimeout(mbwayPopUps2);
+
+
+        }
+
+        function verifyInput(){
+
+           // when user attempts to purchase 0 tickets
+          if((document.getElementById("singleTickets").value == "" || document.getElementById("singleTickets").value  == 0 ) && (document.getElementById("dailyTickets").value == "" || document.getElementById("dailyTickets").value == 0) && (document.getElementById("monthlyTickets").value == "" || document.getElementById("monthlyTickets").value == 0)) {
+
+                  closediv('buyingmenu');
+                  opendiv('boughtnothing');
+
+           }
+
+        }
+
+        function verifyInputEv(){
+
+           // when user attempts to purchase 0 tickets
+          if((document.getElementById("normalTickets").value == "" || document.getElementById("normalTickets").value  == 0 ) && (document.getElementById("seniorTickets").value == "" || document.getElementById("seniorTickets").value == 0) && (document.getElementById("childTickets").value == "" || document.getElementById("childTickets").value == 0)) {
+
+                  closediv('buyingmenu');
+                  opendiv('boughtnothing');
+
+           }
+            else{
+                currentTType = 4;
+            }
+
+        }
+
+        function addTransportTicket() {
+
+          // storing the input values
+           var singleinput = document.getElementById("singleTickets").value;
+           var dailyinput = document.getElementById("dailyTickets").value;
+           var monthlyinput = document.getElementById("monthlyTickets").value;
+            var normalinput = document.getElementById("normalTickets").value;
+           var seniorinput = document.getElementById("seniorTickets").value;
+           var childinput = document.getElementById("childTickets").value;
+          
+          if(usingVoucher == 1) {
+            transportVouchersUsed ++;
+            transportVouchers--;
+            document.getElementById("optionvoucher").style.background = "red";
+            document.getElementById("voucheractivated").style.display = "none";
+          }
+
+          if(usingVoucher == 0) {
+            document.getElementById("optionvoucher").style.background = "red";
+            document.getElementById("voucheractivated").style.display = "none";
+          }
+           
+           // resetting the values of the input boxes after them being stored
+           document.getElementById("singleTickets").value = "";
+           document.getElementById("dailyTickets").value = "";
+           document.getElementById("monthlyTickets").value = "";
+            document.getElementById("normalTickets").value = "";
+           document.getElementById("seniorTickets").value = "";
+           document.getElementById("childTickets").value = "";
+
+          //adding the new tickets to the total of each kind
+            for (var i = 0; i < singleinput; i++) { 
+              boughtTransportTickets++;
+              if(boughtTransportTickets==5){
+                transportVouchers++;
+                boughtTransportTickets = 0;
+              }
+              addTticketS();
+            }
+            for (var j = 0; j < dailyinput; j++) { 
+              boughtTransportTickets++;
+              if(boughtTransportTickets==5){
+                transportVouchers++;
+                boughtTransportTickets = 0;
+              }
+              addTticketD();
+            }
+            for (var k = 0; k < monthlyinput; k++) { 
+              boughtTransportTickets++;
+              if(boughtTransportTickets==5){
+                transportVouchers++;
+                boughtTransportTickets = 0;
+              }
+              addTticketM();
+            }
+            
+            for (var h = 0; h < normalinput; h++) { 
+              boughtEventTickets++;
+              if(boughtEventTickets==5){
+                eventVouchers++;
+                boughtEventTickets = 0;
+              }
+              addTticketEN();
+            }
+            
+            for (var v = 0; v < seniorinput; v++) { 
+              boughtEventTickets++;
+              if(boughtEventTickets==5){
+                eventVouchers++;
+                boughtEventTickets = 0;
+              }
+              addTticketES();
+            }
+            for (var g = 0; g < childinput; g++) { 
+              boughtEventTickets++;
+              if(boughtEventTickets==5){
+                eventVouchers++;
+                boughtEventTickets = 0;
+              }
+              addTticketEC();
+            }
+            
+
+           opendiv('boughtTicketSucess');
+           closediv('buyTransportScreen');
+            closediv('buyTicket');
+
+        }
+
+
+        //to check for how many tickets have been bought, for vouchers
+        var boughtTransportTickets = 0;
+        var boughtEventTickets = 0;
+
+        var transportVouchers = 0;
+        var eventVouchers = 0;
+
+        
+       // adding type Single tickets
+        function addTticketS(){
+          // adding type Metro tickets
+          if (currentTType===1){
+            totalTicketsMS++;
+            sessionStorage.setItem("totalTicketsMS",totalTicketsMS);
+          }
+          // adding type Train tickets
+          else if (currentTType===2){
+            totalTicketsTS++;
+            sessionStorage.setItem("totalTicketsTS",totalTicketsTS);
+
+          }
+          // adding type Bus tickets
+          else if (currentTType===3){
+            totalTicketsBS++;
+            sessionStorage.setItem("totalTicketsBS",totalTicketsBS);
+          }
+        }
+
+        // adding type Daily tickets
+        function addTticketD(){
+          // adding type Metro tickets
+          if (currentTType===1){
+            totalTicketsMD++;
+            sessionStorage.setItem("totalTicketsMD",totalTicketsTD);
+
+          }
+          // adding type Train tickets
+          else if (currentTType===2){
+            totalTicketsTD++;
+            sessionStorage.setItem("totalTicketsTD",totalTicketsTD);
+
+          }
+          // adding type Bus tickets
+          else if (currentTType===3){
+            totalTicketsBD++;
+            sessionStorage.setItem("totalTicketsBD",totalTicketsTD);
+
+          }
+        }
+
+        // adding type Monthly tickets
+        function addTticketM(){
+          // adding type Metro tickets
+          if (currentTType===1){
+            totalTicketsMM++;
+            sessionStorage.setItem("totalTicketsMM",totalTicketsTD);
+
+          }
+          // adding type Train tickets
+          else if (currentTType===2){
+            totalTicketsTM++;
+            sessionStorage.setItem("totalTicketsTM",totalTicketsTD);
+
+          }
+          // adding type Bus tickets
+          else if (currentTType===3){
+            totalTicketsBM++;
+           	sessionStorage.setItem("totalTicketsBM",totalTicketsTD);
+          }
+        }
+        
+        
+        // adding type Normal Event tickets
+        function addTticketEN(){
+            totalTicketsE++;
+          totalTicketsEN++;
+          ticketsEN.push(currentEv);
+            sessionStorage.setItem("totalTicketsEN",totalTicketsEN);
+            sessionStorage.setItem("ticketsEN", JSON.stringify(ticketsEN));
+            sessionStorage.setItem("totalTicketsE",totalTicketsE);
+            
+        }
+
+        // adding type Daily tickets
+        function addTticketES(){
+            totalTicketsE++;
+          totalTicketsES++;
+            ticketsES.push(currentEv);
+            sessionStorage.setItem("totalTicketsES",totalTicketsES);
+            sessionStorage.setItem("ticketsES", JSON.stringify(ticketsES));
+            sessionStorage.setItem("totalTicketsE",totalTicketsE);
+        }
+
+        // adding type Monthly tickets
+        function addTticketEC(){
+            totalTicketsE++;
+          totalTicketsEC++;
+            ticketsEC.push(currentEv);
+            sessionStorage.setItem("totalTicketsEC",totalTicketsEC);
+            sessionStorage.setItem("ticketsEC", JSON.stringify(ticketsEC));
+            sessionStorage.setItem("totalTicketsE",totalTicketsE);
+        }
+        
+
+        // displaying the currently held Metro tickets in a table in My Tickets 
+        function presentTicketsM(){
+
+            if(totalTicketsMS == 0 && totalTicketsMD == 0 && totalTicketsMM == 0) {
+                document.getElementById("emptyM").style.display = "block";
+                document.getElementById("presentTicketsM").style.display = "none";
+
+                return;
+            }
+
+            document.getElementById("emptyM").style.display = "none";
+
+            var strMessage1 = document.getElementById("presentTicketsM") ;
+
+            var myinittable = '<div class="table-wrapper-scroll-y my-custom-scrollbar">'+
+'                            <table class="table1" id="table1">'+
+'                              <col width="210">';
+  
+             for (var i = 0; i < totalTicketsMM ; i++) {
+
+              myinittable +=  '<tr class="trTransM" width="130">'+
+'                                <td id="Tticket" height="50" onclick="opendiv(\'transportTicket\');startScanning(\'totalTicketsMM\');"> <span id="tickettext"> BILHETE MENSAL<br><b>METRO</b> </span></td>'+
+'                              </tr>';
+                 
+            }
+
+            for (var i = 0; i < totalTicketsMD ; i++) {
+
+              myinittable +=  '<tr class="trTransD" width="130">'+
+'                                <td id="Tticket" height="50" onclick="opendiv(\'transportTicket\');startScanning(\'totalTicketsMD\');"> <span id="tickettext"> BILHETE DIÁRIO <br><b>METRO</b> </span></td>'+
+'                              </tr>';
+                 
+            }
+
+             for (var i = 0; i < totalTicketsMS ; i++) {
+
+              myinittable +=  '<tr class="trTransS" width="130">'+
+'                                <td id="Tticket" height="50" onclick="opendiv(\'transportTicket\');startScanning(\'totalTicketsMS\');"> <span id="tickettext"> BILHETE UNITÁRIO<br><b>METRO</b> </span></td>'+
+'                              </tr>';
+                 
+            }
+          
+
+            myinittable +=  '</table>'+
+'                          </div>'+
+'                        </span>';
+  
+
+
+            strMessage1.innerHTML = myinittable;
+            document.getElementById("presentTicketsM").style.display = "block";
+
+
+            
+        }
+
+      // displaying the currently held Train tickets in a table in My Tickets 
+         function presentTicketsT(){
+
+             if(totalTicketsTS == 0 && totalTicketsTD == 0 && totalTicketsTM == 0) {
+                document.getElementById("emptyT").style.display = "block";
+                document.getElementById("presentTicketsT").style.display = "none";
+
+                return;
+            }
+
+            document.getElementById("emptyT").style.display = "none";
+
+            var strMessage1 = document.getElementById("presentTicketsT") ;
+
+            var myinittable = '<div class="table-wrapper-scroll-y my-custom-scrollbar">'+
+'                            <table class="table1" id="table1">'+
+'                              <col width="210">';
+  
+            for (var i = 0; i < totalTicketsTM ; i++) {
+
+              myinittable +=  '<tr class="trTransM" width="130">'+
+'                                <td id="Tticket" height="50" onclick="opendiv(\'transportTicket\');startScanning(\'totalTicketsTM\');">  <span id="tickettext">BILHETE MENSAL<br> <b>COMBOIO</b></span></td>'+
+'                              </tr>';
+                 
+            }
+
+            for (var i = 0; i < totalTicketsTD ; i++) {
+
+              myinittable +=  '<tr class="trTransD" width="130">'+
+'                                <td id="Tticket" height="50" onclick="opendiv(\'transportTicket\');startScanning(\'totalTicketsTD\');">  <span id="tickettext">BILHETE DIÁRIO<br> <b>COMBOIO</b></span></td>'+
+'                              </tr>';
+                 
+            }
+
+
+            for (var i = 0; i < totalTicketsTS ; i++) {
+
+              myinittable +=  '<tr class="trTransS" width="130">'+
+'                                <td id="Tticket" height="50" onclick="opendiv(\'transportTicket\');startScanning(\'totalTicketsTS\');">  <span id="tickettext">BILHETE UNITÁRIO<br> <b>COMBOIO</b></span></td>'+
+'                              </tr>';
+                 
+            }
+
+            myinittable +=  '</table>'+
+'                          </div>'+
+'                        </span>';
+  
+
+
+            strMessage1.innerHTML = myinittable;
+            document.getElementById("presentTicketsT").style.display = "block";
+
+
+            
+        }
+
+      // displaying the currently held Bus tickets in a table in My Tickets 
+         function presentTicketsB(){
+
+           if(totalTicketsBS == 0 && totalTicketsBD == 0 && totalTicketsBM == 0) {
+                document.getElementById("emptyB").style.display = "block";
+                document.getElementById("presentTicketsB").style.display = "none";
+
+                return;
+            }
+
+            document.getElementById("emptyB").style.display = "none";
+
+            var strMessage1 = document.getElementById("presentTicketsB");
+
+            
+            var myinittable = '<div class="table-wrapper-scroll-y my-custom-scrollbar">'+
+'                            <table class="table1" id="table1">'+
+'                              <col width="210">';
+           
+           for (var i = 0; i < totalTicketsBM ; i++) {
+
+              myinittable +=  '<tr class="trTransM" width="130">'+
+'                                <td id="Tticket" height="50" onclick="opendiv(\'transportTicket\');startScanning(\'totalTicketsBM\');"> <span id="tickettext">BILHETE MENSAL<br> <b>AUTOCARRO</b></span></td>'+
+'                              </tr>';
+                 
+            }
+
+            for (var i = 0; i < totalTicketsBD ; i++) {
+
+              myinittable +=  '<tr class="trTransD" width="130">'+
+'                                <td  id="Tticket" height="50" onclick="opendiv(\'transportTicket\');startScanning(\'totalTicketsBD\');"> <span id="tickettext">BILHETE DIÁRIO<br> <b>AUTOCARRO</b></span></td>'+
+'                              </tr>';
+                 
+            }
+
+
+
+            for (var i = 0; i < totalTicketsBS ; i++) {
+
+              myinittable +=  '<tr class="trTransS" width="130">'+
+'                                <td  id="Tticket" height="50" onclick="opendiv(\'transportTicket\');startScanning(\'totalTicketsBS\');"> <span id="tickettext">BILHETE UNITÁRIO<br> <b>AUTOCARRO</b></span></td>'+
+'                              </tr>';
+                 
+            }
+
+            myinittable +=  '</table>'+
+'                          </div>'+
+'                        </span>';
+  
+
+
+            strMessage1.innerHTML = myinittable;
+            document.getElementById("presentTicketsB").style.display = "block";
+            var myinittable = '<div class="table-wrapper-scroll-y my-custom-scrollbar">'+
+'                            <table class="table1" id="table1">'+
+'                              <col width="210">';
+           
+             
+            
+        }
+
+        function presentTicketsE(){
+            
+            var ev_name;
+            var ev_date;
+
+           if(totalTicketsE == 0 ) {
+                document.getElementById("emptyE").style.display = "block";
+                document.getElementById("presentTicketsE").style.display = "none";
+
+                return;
+            }
+            
+            document.getElementById("emptyE").style.display = "none";
+
+            var strMessage1 = document.getElementById("presentTicketsE") ;
+            
+             var myinittable = '<div class="table-wrapper-scroll-y my-custom-scrollbar">'+
+'                            <table class="table1" id="table1">'+
+'                              <col width="210">';
+           
+            
+            for (var i = 0; i < totalTicketsEN ; i++) {
+                ev_name = event_names[ticketsEN[i]];
+                ev_date = event_dates[ticketsEN[i]];
+              myinittable +=  '<tr class="trTransE" width="130">'+
+'                                <td id="Tticket2" height="50" onclick="opendiv(\'transportTicket\');startScanningEv(\'totalTicketsEN\','+ticketsEN[i]+');"> <span id="tickettext2">'+ev_name +'<br>'+ev_date+'<br>'+'&nbsp;<b>BILHETE NORMAL</b></span></td>'+
+'                              </tr>';
+                 
+            }
+            for (var i = 0; i < totalTicketsES ; i++) {
+                ev_name = event_names[ticketsES[i]];
+                ev_date = event_dates[ticketsES[i]];
+                
+              myinittable +=  '<tr class="trTransE" width="130">'+
+'                                <td id="Tticket2" height="60" onclick="opendiv(\'transportTicket\');startScanningEv(\'totalTicketsES\','+ticketsEN[i]+');"> <span id="tickettext2">'+ev_name +'<br>'+ev_date+'<br>'+'&nbsp;<b>BILHETE SENIOR</b></span></td>'+
+'                              </tr>';
+                 
+            }
+            for (var i = 0; i < totalTicketsEC ; i++) {
+                ev_name = event_names[ticketsEC[i]];
+                ev_date = event_dates[ticketsEC[i]];
+                
+              myinittable +=  '<tr class="trTransE" width="130">'+
+'                                <td id="Tticket2" height="50" onclick="opendiv(\'transportTicket\');startScanningEv(\'totalTicketsEC\','+ticketsEN[i]+');"> <span id="tickettext2">'+ev_name +'<br>'+ev_date+'<br>'+'&nbsp;<b>BILHETE CRIANÇA</b></span></td>'+
+'                              </tr>';
+                 
+            }
+
+            myinittable +=  '</table>'+
+'                          </div>'+
+'                        </span>';
+  
+
+
+            strMessage1.innerHTML = myinittable;
+            document.getElementById("presentTicketsE").style.display = "block";
+            var myinittable = '<div class="table-wrapper-scroll-y my-custom-scrollbar">'+
+'                            <table class="table1" id="table1">'+
+'                              <col width="210">';
+           
+             
+            
+        }
+
+        var currentScanTType;
+
+        function startScanning(ticketType) {
+            
+            document.getElementById("retryScan").onclick = reScanning;
+
+            currentScanTType = ticketType;
+
+            var random_qrscan = Math.floor(Math.random() * 101);
+
+            document.getElementById("scanningMessage").style.display = "block";
+
+            if(random_qrscan < 20) {
+              setTimeout(function scanSucess(){
+
+                document.getElementById("retryScan").style.display = "none";
+                document.getElementById("smessage").innerHTML = "Redirecionado <br> ao bilhete.";
+                document.getElementById("qrcode").src = "greenqr.png";
+                document.getElementById("loadgif").style.display = "none";
+                removeTicket(ticketType);
+
+              }, 5000);
+            }
+            else {
+               setTimeout(function scanFail(){
+
+                document.getElementById("retryScan").style.display = "block";
+                document.getElementById("smessage").innerHTML = "Scan falhou! <br><br> Tente <br>novamente.";
+                document.getElementById("qrcode").src = "redqr.png";
+                document.getElementById("loadgif").style.display = "none";
+
+              }, 5000);
+            }
+
+        }
+
+        function reScanning() {
+
+            document.getElementById("retryScan").style.display = "none";
+            document.getElementById("scanningMessage").style.display = "block";
+            document.getElementById("smessage").innerHTML = "Scanning...";
+            document.getElementById("qrcode").src = "blackqr.png";
+            document.getElementById("loadgif").style.display = "block";
+
+            setTimeout(function scanSucess(){
+
+                document.getElementById("retryScan").style.display = "none";
+                document.getElementById("smessage").innerHTML = "Redirecionado <br> ao bilhete.";
+                document.getElementById("qrcode").src = "greenqr.png";
+                document.getElementById("loadgif").style.display = "none";
+                removeTicket(currentScanTType);
+
+            }, 5000);
+       }
+        
+        var currentScanTTypeEv;
+        var deleteEv;
+
+        function startScanningEv(ticketType,event) {
+            
+            document.getElementById("retryScan").onclick = reScanningEv;
+
+
+            currentScanTTypeEv = ticketType;
+
+            var random_qrscan = Math.floor(Math.random() * 101);
+
+            document.getElementById("scanningMessage").style.display = "block";
+
+            if(random_qrscan < 20) {
+              setTimeout(function scanSucess(){
+
+                document.getElementById("retryScan").style.display = "none";
+                document.getElementById("smessage").innerHTML = "Redirecionado <br> ao bilhete.";
+                document.getElementById("qrcode").src = "greenqr.png";
+                document.getElementById("loadgif").style.display = "none";
+                removeTicketEv(currentScanTTypeEv,event);
+
+              }, 5000);
+            }
+            else {
+               setTimeout(function scanFail(){
+
+                document.getElementById("retryScan").style.display = "block";
+                document.getElementById("smessage").innerHTML = "Scan falhou! <br><br> Tente <br>novamente.";
+                document.getElementById("qrcode").src = "redqr.png";
+                document.getElementById("loadgif").style.display = "none";
+
+              }, 5000);
+            }
+
+        }
+        
+        function removeTicketEv(ticketType,event) {
+            totalTicketsE--;
+            if(ticketType == "totalTicketsEN") {
+                totalTicketsEN--;
+                for( var i = 0; i < ticketsEN.length; i++){ 
+                   if ( ticketsEN[i] === event) {
+                     ticketsEN.splice(i, 1); 
+                   }
+                }
+                sessionStorage.setItem("totalTicketsEN",totalTicketsEN);
+                 sessionStorage.setItem("ticketsEN", JSON.stringify(ticketsEN));
+          }
+            else if(ticketType == "totalTicketsES") {
+                totalTicketsES--;
+                for( var i = 0; i < ticketsES.length; i++){ 
+                   if ( ticketsES[i] === event) {
+                     ticketsES.splice(i, 1); 
+                   }
+                }
+                sessionStorage.setItem("totalTicketsES",totalTicketsES);
+                 sessionStorage.setItem("ticketsES", JSON.stringify(ticketsES));
+          }
+            else if(ticketType == "totalTicketsEC") {
+                totalTicketsEC--;
+                for( var i = 0; i < ticketsEC.length; i++){ 
+                   if ( ticketsEC[i] === event) {
+                     ticketsEC.splice(i, 1); 
+                   }
+                }
+                sessionStorage.setItem("totalTicketsEC",totalTicketsEC);
+                sessionStorage.setItem("ticketsEC", JSON.stringify(ticketsEC));
+          }
+            sessionStorage.setItem("totalTicketsE",totalTicketsE);
+            presentTicketsE();
+        }
+        
+
+        function reScanningEv() {
+
+            document.getElementById("retryScan").style.display = "none";
+            document.getElementById("scanningMessage").style.display = "block";
+            document.getElementById("smessage").innerHTML = "Scanning...";
+            document.getElementById("qrcode").src = "blackqr.png";
+            document.getElementById("loadgif").style.display = "block";
+
+            setTimeout(function scanSucess(){
+
+                document.getElementById("retryScan").style.display = "none";
+                document.getElementById("smessage").innerHTML = "Redirecionado <br> ao bilhete.";
+                document.getElementById("qrcode").src = "greenqr.png";
+                document.getElementById("loadgif").style.display = "none";
+                removeTicketEv(currentScanTTypeEv,event);
+
+              }, 5000);
+       }
+
+        
+
+        function closeScanning() { // resetting the non scanned qr code state
+
+            document.getElementById("retryScan").style.display = "none";
+            document.getElementById("scanningMessage").style.display = "none";
+            document.getElementById("smessage").innerHTML = "Scanning... ";
+            document.getElementById("qrcode").src = "blackqr.png";
+            document.getElementById("loadgif").style.display = "block";
+            closediv("transportTicket");
+
+        }
+
+        function removeTicket(ticketType) {
+          if(ticketType == "totalTicketsMS") {
+            totalTicketsMS--;
+            sessionStorage.setItem("totalTicketsMS",totalTicketsMS);
+          }
+          else if(ticketType == "totalTicketsMD") {
+            totalTicketsMD--;
+            sessionStorage.setItem("totalTicketsMD",totalTicketsMD);
+          }
+          else if(ticketType == "totalTicketsMM") {
+            totalTicketsMM--;
+            sessionStorage.setItem("totalTicketsMM",totalTicketsMM);
+          }
+          else if(ticketType == "totalTicketsTS") {
+            totalTicketsTS--;
+            sessionStorage.setItem("totalTicketsTS",totalTicketsTS);
+          }
+          else if(ticketType == "totalTicketsTD") {
+            totalTicketsTD--;
+            sessionStorage.setItem("totalTicketsTD",totalTicketsTD);
+          }
+          else if(ticketType == "totalTicketsTM") {
+            totalTicketsTM--;
+            sessionStorage.setItem("totalTicketsTM",totalTicketsTM);
+          }
+          else if(ticketType == "totalTicketsBS") {
+            totalTicketsBS--;
+            sessionStorage.setItem("totalTicketsBS",totalTicketsBS);
+          }
+          else if(ticketType == "totalTicketsBD") {
+            totalTicketsBD--;
+            sessionStorage.setItem("totalTicketsBD",totalTicketsBD);
+          }
+          else if(ticketType == "totalTicketsBM") {
+            totalTicketsBM--;
+            sessionStorage.setItem("totalTicketsBM",totalTicketsBM);
+          }
+          presentTicketsM();
+          presentTicketsB();
+          presentTicketsT();
+
+        }
+
+
+
+
+        function presentVouchers(){
+
+          // get a trasport voucher each 5 tickets bought
+
+          //boughtTransportTickets = 0;
+          //transportVouchersUsed = 0;
+
+          if(transportVouchers == 0 && eventVouchers == 0) {
+                document.getElementById("emptyV").style.display = "block";
+                document.getElementById("presentVouchers").style.display = "none";
+                document.getElementById("emptyVEv").style.display = "block";
+                document.getElementById("presentVouchersEv").style.display = "none";
+
+                return;
+          }
+
+          else if(eventVouchers == 0 &&  transportVouchers != 0) {
+                
+                document.getElementById("emptyVEv").style.display = "block";
+                document.getElementById("presentVouchersEv").style.display = "none";
+
+                document.getElementById("emptyV").style.display = "none";
+
+              var myinittableV = '<div class="table-wrapper-scroll-y2 my-custom-scrollbar2">'+
+    '                            <table class="table2" id="table1">'+
+    '                              <col width="210">'+'<tr class="trVoucherT" width="130">';
+      
+                for (var i = 0; i < transportVouchers ; i++) {
+
+                  myinittableV += ' <td  id="Tticket" height="40" > <span id="tickettext">&emsp;VOUCHER TRANSPORTES</span><br><span id="percentage">&emsp;<b>30%</b></span></td>';
+                     
+                }
+
+                myinittableV += '</tr>'+ '</table>'+
+    '                          </div>'+
+    '                        </span>';
+
+              document.getElementById("presentVouchers").innerHTML = myinittableV;
+                document.getElementById("presentVouchers").style.display = "block";
+                return;
+          }
+
+          else if(eventVouchers != 0 &&  transportVouchers == 0) {
+                
+                document.getElementById("emptyV").style.display = "block";
+                document.getElementById("presentVouchers").style.display = "none";
+
+                document.getElementById("emptyVEv").style.display = "none";
+
+              var myinittableVEv = '<div class="table-wrapper-scroll-y3 my-custom-scrollbar3">'+
+    '                            <table class="table2">'+
+    '                              <col width="210">'+'<tr class="trVoucherEv" width="210">';
+
+
+                for (var i = 0; i < eventVouchers ; i++) {
+
+                  myinittableVEv +=  ' <td  id="Tticket" height="40"  > <span id="tickettext">&emsp;VOUCHER EVENTOS</span><br><span id="percentage">&emsp;<b>30%</b></span></td>';
+                }
+
+                myinittableVEv += '</tr>'+ '</table>'+
+    '                          </div>'+
+    '                        </span>';
+
+              document.getElementById("presentVouchersEv").innerHTML = myinittableVEv;
+                document.getElementById("presentVouchersEv").style.display = "block";
+
+
+                return;
+          }
+
+
+          else {
+
+              document.getElementById("emptyV").style.display = "none";
+
+              var myinittableV = '<div class="table-wrapper-scroll-y2 my-custom-scrollbar2">'+
+    '                            <table class="table2" id="table1">'+
+    '                              <col width="210">'+'<tr class="trVoucherT" width="130">';
+      
+                for (var i = 0; i < transportVouchers ; i++) {
+
+                  myinittableV += ' <td  id="Tticket" height="40" > <span id="tickettext">&emsp;VOUCHER TRANSPORTES</span><br><span id="percentage">&emsp;<b>30%</b></span></td>';
+                     
+                }
+
+                myinittableV += '</tr>'+ '</table>'+
+    '                          </div>'+
+    '                        </span>';
+
+              document.getElementById("presentVouchers").innerHTML = myinittableV;
+                document.getElementById("presentVouchers").style.display = "block";
+
+                 document.getElementById("emptyVEv").style.display = "none";
+
+              var myinittableVEv = '<div class="table-wrapper-scroll-y3 my-custom-scrollbar3">'+
+    '                            <table class="table2">'+
+    '                              <col width="210">'+'<tr class="trVoucherEv" width="210">';
+
+                for (var i = 0; i < eventVouchers ; i++) {
+
+                  myinittableVEv +=  ' <td  id="Tticket" height="40" > <span id="tickettext">&emsp;VOUCHER EVENTOS</span><br><span id="percentage">&emsp;<b>30%</b></span></td>';
+                }
+
+                myinittableVEv += '</tr>'+ '</table>'+
+    '                          </div>'+
+    '                        </span>';
+
+              document.getElementById("presentVouchersEv").innerHTML = myinittableVEv;
+                document.getElementById("presentVouchersEv").style.display = "block";
+
+          }
+
+
+      }
+
+       var usingVoucher = 0;
+        
+        var usingVoucherEv = 0;
+
+      function hasVoucherVerifEv(){
+
+
+        if(eventVouchers == 0 ){
+            document.getElementById("noVouchers").style.display = "block";
+
+        }
+
+        else{
+
+
+          opendiv('buyingVoucher');
+          document.getElementById("nrVouchers").innerHTML = eventVouchers;
+          document.getElementById("totalpriceNrVoucher").innerHTML = latesttotalE + " €";
+          document.getElementById("newpriceVoucher").innerHTML = Math.round((latesttotalE*(0.7)) * 100) / 100 + " €";
+
+        }
+
+      }
+
+
+
+       function hasVoucherVerif(){
+
+
+        if(transportVouchers == 0 ){
+            document.getElementById("noVouchers").style.display = "block";
+
+        }
+
+        else{
+
+
+          opendiv('buyingVoucher');
+          document.getElementById("nrVouchers").innerHTML = transportVouchers;
+          document.getElementById("totalpriceNrVoucher").innerHTML = latesttotal + " €";
+          document.getElementById("newpriceVoucher").innerHTML = Math.round((latesttotal*(0.7)) * 100) / 100 + " €";
+
+        }
+
+      }
+
+      var transportVouchersUsed = 0;
+
+        function useVoucher(){
+
+          usingVoucher = 1;
+
+          document.getElementById("optionvoucher").style.background = "green";
+          document.getElementById("voucheractivated").style.display = "block";
+
+
+        }
+
+        function dontuseVoucher(){
+
+            usingVoucher = 0;
+
+          document.getElementById("optionvoucher").style.background = "red";
+          document.getElementById("voucheractivated").style.display = "none";
+
+
+        }
+
+      
+        
+        
+        
+    </script>
+
+</html>

@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+		<title>iGo</title>
+		<link rel = "stylesheet" href = "styleiGo.css">
+
+	</head>
+
+	<body onload = "startTime();weather();whatdayisit();verifycolor();setcolor();fitnesstimer();">	
+
+		<div id="iGoWrapper">
+	        <img src="bracelet.png" id="bracelet" >
+
+	        <button class= "btn" id = "lockbutton" onclick = "lock();"></button>
+            <button class="btn" id = "backbutton" onclick = "closeAllpopUPS();"></button>
+
+			<div id = "iGobox">
+
+				<div id = "lockscreen" onclick="lock()">
+				</div>
+                 <div id = "showbattery">
+
+                <img src = "close.png" id="other2close" onclick="closeBattery();"> 
+
+                <div id = "batteryText"> restam <b>00h57min</b> de bateria
+
+                <p> <b>Modo Poupan&ccedil;a de Energia</b></p> </div>
+
+                <img src = "batterysave.png" id="batterysave" width="45" onclick="changecolorblack();"> 
+
+                <div id = "batactivated"> <b> ATIVADO </b> </div>
+
+                    
+                 </div>
+                <div id = "popupSOS" >
+                    <img src = "close.png" id="close" onclick="closeSOS();">
+                    
+                    <span id="sosText">Carregue no bot&atilde;o de chamada para contactar os servi&ccedil;os de emerg&ecirc;ncia.</span>
+                    <p><span id="calltime">00:00</span></p>
+                    
+                    <div class="circle" id ="circleGreen" onclick="callSOS();">
+                        <img src = "callon.png"  id="call">
+                    </div>
+                    <div class="circle" id ="circleRed" onclick="closeSOS();">
+                        <img src = "calloff.png"  id="call">
+                    </div>
+                    
+                </div>
+                <div id = "weatherPOP" >
+                     <img src = "close.png" id="close" onclick="closeWEA();"> 
+                     <table id="WEAtable">
+                         <td id="day1">
+                             <span> <b>HOJE</b><br><b>12</b><br> <b>   24</b><br></span>
+                             <img src="cloud.png" class="weaicon">
+                         </td>
+                         <td id="day2">
+                             <span>TER<br>10<br>    19<br></span>
+                             <img src="rain.png" class="weaicon">
+                         </td>
+                         <td id="day3">
+                             <span>QUA<br>13<br>    30<br></span>
+                             <img src="sun.png" class="weaicon">
+                         </td>
+                         <td id="day4">
+                             <span>QUI<br>20<br>    35<br></span>
+                             <img src="sun.png" class="weaicon">
+                         </td>
+                     </table>
+                </div>
+                
+                <div id="mainhelp">
+                    <img src = "close.png" id="otherclose" onclick="closeHelp();">
+                    <span id="mh_1">SOS</span>
+                    <span id="mh_2">[clique para + meteorologia]</span>
+                    <span id="mh_3"> &larr; bloquear &emsp;&emsp;&emsp;&emsp;&emsp;home &rarr;	</span>
+                    <br><br><br><br><br>
+                    <span id="mh_4">MAPA&emsp;&emsp;&emsp;N/A &emsp;SA&Uacute;DE/<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;FITNESS</span>
+                    <span id="mh_5"><br><br>informa&ccedil;&otilde;es<br> da bateria <br>&darr;</span>
+                    <span id="mh_6"><br><br>luminosidade    <br>&emsp;&emsp;&emsp;&emsp;&emsp; &darr;</span>
+                    
+                </div>
+
+				<div id = "main">
+
+					<div id = "upperbar"> 
+
+						<div id = hash>
+
+							<span id = "sos" onclick="sosPOP();"> 
+
+                                 <img src="sos.png" width=16 class="desaturate">
+
+                            </span>
+
+				            <div id = "weather" onclick="openWEA();">
+
+								<span id="temperature">30&ordm;C</span>
+                                
+                                <img id="weatherimg" src="sun.png">
+
+							</div>
+                            
+                            
+
+				            <span id = "info" onclick="openHelp();"> 
+                                <b>?</b>
+				            </span>				            
+
+						</div>
+
+					</div>
+
+					<table id = table2>
+
+						<td class = "middle" id = "first"> 
+
+			                <img src="map.png" width=30 onclick="openMap();">
+
+			            </td>
+
+			            <td class = "middle" id = "second"> 
+
+			                 <img src="ticket.png" width=34 onclick="openTickets();">
+
+
+			            </td>
+
+			            <td class = "middle" id = "third"> 
+
+			                 <img src="health.png" width=32 onclick="openHealth();">
+
+			            </td>
+
+					</table>
+
+					<div id = "time"> 
+
+						<img id="battery" src="battery.png" width=18 onclick="showBattery();">
+                        <span id="clock"></span>
+						<span id="date">
+                        </span>
+                  		<img id="contrast" src="contrast.png" width=18 onclick="changecolor();">
+
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+
+	</body>
+
+    <script>
+        var fittime;
+        function fitnesstimer(){
+            var counterfootspteps = parseInt(sessionStorage.getItem("nrfootsteps"));
+            if (counterfootspteps && counterfootspteps!=0){
+                var sec = parseInt(sessionStorage.getItem("nrsec"));
+                var min = parseInt(sessionStorage.getItem("nrmin"));
+                var hor = parseInt(sessionStorage.getItem("nrhor"));
+                var counterfootspteps = parseInt(sessionStorage.getItem("nrfootsteps"));
+                var counterkm = parseInt(sessionStorage.getItem("nrkms"));
+                fittime = setInterval(function count(){
+                sec++;
+                counterfootspteps+=3;
+                if (sec>=60){
+                    sec = 0;
+                    min++
+                }
+                if (min>=60){
+                    min = 0;
+                    hor++
+                }
+                if(counterfootspteps == 1000){
+                    counterfootspteps = 0;
+                    counterkm++;
+                }
+                    
+                sessionStorage.setItem('nrfootsteps', counterfootspteps);
+                sessionStorage.setItem('nrkms', counterkm);
+                sessionStorage.setItem('nrmin', min);
+                sessionStorage.setItem('nrsec', sec);
+                sessionStorage.setItem('nrhor', hor);
+                
+            },1000)
+            }
+        }
+
+    	var color;
+
+    	function verifycolor() {
+    		if(sessionStorage.getItem("contrast")){
+	            color = parseInt(sessionStorage.getItem("contrast"));
+	        }
+	        else {
+	        	color = 1;
+	        	sessionStorage.setItem('contrast',color)  ;
+	        }
+    	}
+
+    	function setcolor() {
+ 
+    		if(color==0) {     
+                document.getElementById('batactivated').style.display = "block"; 
+	    		document.getElementById('upperbar').style.background = 'black';
+	    		document.getElementById('table2').style.background = 'black';
+	    		document.getElementById('time').style.background = 'black';
+	    		document.getElementById('main').style.background = 'black';
+	    		document.getElementById('weather').style.background = 'cornflowerblue';
+	    		document.getElementById('info').style.background = 'DimGay';
+	    		document.getElementById('first').style.background = 'Sienna';
+	    		document.getElementById('second').style.background = 'Sienna';
+	    		document.getElementById('third').style.background = 'Sienna';
+	    		document.getElementById('sos').style.background = 'FireBrick';
+	    	}
+	    	else {
+                document.getElementById('batactivated').style.display = "none";
+	    		document.getElementById('upperbar').style.background = '#e2c8b3';
+	    		document.getElementById('table2').style.background = '#e2c8b3';
+	    		document.getElementById('time').style.background = '#e2c8b3';
+	    		document.getElementById('main').style.background = '#e2c8b3';
+	    		document.getElementById('weather').style.background = '#8bd8ef';
+	    		document.getElementById('info').style.background = 'gray';
+	    		document.getElementById('first').style.background = '#db8067';
+	    		document.getElementById('second').style.background = '#db8067';
+	    		document.getElementById('third').style.background = '#db8067';
+	    		document.getElementById('sos').style.background = '#A75D67';
+	    	}
+
+    	}
+
+    	function changecolor() {
+ 
+    		if(color==1) {
+    			color=0;
+    			sessionStorage.setItem('contrast',color)  ;       
+	    		document.getElementById('upperbar').style.background = 'black';
+	    		document.getElementById('table2').style.background = 'black';
+	    		document.getElementById('time').style.background = 'black';
+	    		document.getElementById('main').style.background = 'black';
+	    		document.getElementById('weather').style.background = 'cornflowerblue';
+	    		document.getElementById('info').style.background = 'DimGay';
+	    		document.getElementById('first').style.background = 'Sienna';
+	    		document.getElementById('second').style.background = 'Sienna';
+	    		document.getElementById('third').style.background = 'Sienna';
+	    		document.getElementById('sos').style.background = 'FireBrick';
+	    	}
+	    	else {
+	    		color=1;
+                document.getElementById('batactivated').style.display = "none";
+    			sessionStorage.setItem('contrast',color)  ;       
+	    		document.getElementById('upperbar').style.background = '#e2c8b3';
+	    		document.getElementById('table2').style.background = '#e2c8b3';
+	    		document.getElementById('time').style.background = '#e2c8b3';
+	    		document.getElementById('main').style.background = '#e2c8b3';
+	    		document.getElementById('weather').style.background = '#8bd8ef';
+	    		document.getElementById('info').style.background = 'gray';
+	    		document.getElementById('first').style.background = '#db8067';
+	    		document.getElementById('second').style.background = '#db8067';
+	    		document.getElementById('third').style.background = '#db8067';
+	    		document.getElementById('sos').style.background = '#A75D67';
+	    	}
+
+    	}
+        
+        function whatdayisit(){
+            var d = new Date();
+            var year = d.getFullYear();
+            var month = d.getMonth()+1;
+            var day = d.getDate();
+            document.getElementById("date").innerHTML = "<br>"+day + "/" + month + "/" + year;
+        }
+        
+    	function startTime() {
+  			var today = new Date();
+			var h = today.getHours();
+			var m = today.getMinutes();
+			m = checkTime(m);
+			document.getElementById('clock').innerHTML = h + ":" + m;
+			var t = setTimeout(startTime, 500);
+		}
+        function weather() {
+            var rand = Math.round(Math.random()*3);
+            var temp = document.getElementById("temperature");
+            var image = document.getElementById("weatherimg");
+            if(rand == 0){
+                temp.innerHTML="-2&ordm;C";
+                image.src="snow.png";
+            }
+            if(rand == 1){
+               temp.innerHTML="14&ordm;C";
+                image.src = "rain.png";
+            }
+            if(rand == 2){
+                temp.innerHTML="30&ordm;C";
+                image.src = "sun.png"
+            }
+            if(rand == 3){
+                temp.innerHTML="10&ordm;C";
+                image.src = "cloud.png"
+            }
+        }
+	    function checkTime(i) {
+ 			 if (i < 10) {i = "0" + i}; 
+ 			 	return i;
+		}
+        
+        function lock(){
+            var lockscreen = document.getElementById("lockscreen");
+            if(lockscreen.style.display=="none"){
+                lockscreen.style.display="block";
+                closeAllpopUPS();
+            }
+            else{
+                lockscreen.style.display="none";
+            }
+        }
+        function sosPOP(){  
+            document.getElementById("popupSOS").style.display="block";
+        }
+        function closeSOS(){ 
+            
+            if (audio){audio.pause();}
+            
+        clearInterval(stopwatch);
+    
+        document.getElementById("popupSOS").style.display="none";
+            
+         document.getElementById("circleRed").style.display="none";
+         document.getElementById("sosText").innerHTML="Carregue no bot&atilde;o de chamada para contactar os servi&ccedil;os de emerg&ecirc;ncia.";
+        document.getElementById("calltime").style.display="none";
+                    
+       
+        }
+        
+        function openWEA(){
+            document.getElementById("weatherPOP").style.display="block";
+        }
+        function closeWEA(){
+            document.getElementById("weatherPOP").style.display="none";
+        }
+        
+        var audio;
+        
+        function callSOS(){
+            
+            document.getElementById("calltime").style.display="block";
+            document.getElementById("circleRed").style.display="block";
+            document.getElementById("sosText").innerHTML="Est&aacute; em chamada com o servi&ccedil;o de emerg&ecirc;ncia local. Por favor decreva o problema.";
+            timer();
+            audio = new Audio('911.mp3');
+            audio.play();
+            
+        }
+        
+        var stopwatch;
+        
+        function timer(){           
+            document.getElementById("calltime").innerHTML="00:00";
+            
+            var sec = 0;
+            var min = 0;
+            var time = document.getElementById("calltime");
+            stopwatch = setInterval(function count(){
+                sec++;
+                if (sec>=60){
+                    sec = 0;
+                    min++
+                }
+                if(sec<10 && min<10){
+                    time.innerHTML="0"+min+":0"+sec;
+                }
+                else if(sec>10 && min<10){
+                    time.innerHTML="0"+min+":"+sec;
+                }
+                else if(sec>10 && min<10){
+                    time.innerHTML=min+":0"+sec;
+                }
+                else{
+                    time.innerHTML=min+":"+sec;
+                }
+                
+        },1000)
+        }
+        
+        function openHelp(){
+            document.getElementById("mainhelp").style.display="block";        
+        }
+        
+        function closeHelp(){
+            document.getElementById("mainhelp").style.display="none"; 
+        }
+
+        function openHealth(){
+            clearInterval(fittime);
+            window.open("Health.html","_self");
+        }
+
+        function openMap(){
+            window.open("Map.html","_self");
+        }
+
+        function openTickets(){
+            window.open("Tickets.html","_self");
+        }
+        
+        function closeAllpopUPS(){
+            closeSOS();
+            closeWEA();
+            closeHelp();
+        }
+
+        function closeBattery(){
+            document.getElementById("showbattery").style.display="none";
+        }
+
+        function showBattery(){
+            document.getElementById("showbattery").style.display="block";
+        }
+
+        function changecolorblack() {
+
+            if(color==1) {
+                color=0;
+                sessionStorage.setItem('contrast',color)  ; 
+                document.getElementById('batactivated').style.display = "block";      
+                document.getElementById('upperbar').style.background = 'black';
+                document.getElementById('table2').style.background = 'black';
+                document.getElementById('time').style.background = 'black';
+                document.getElementById('main').style.background = 'black';
+                document.getElementById('weather').style.background = 'cornflowerblue';
+                document.getElementById('info').style.background = 'DimGay';
+                document.getElementById('first').style.background = 'Sienna';
+                document.getElementById('second').style.background = 'Sienna';
+                document.getElementById('third').style.background = 'Sienna';
+                document.getElementById('sos').style.background = 'FireBrick';
+            }
+        }
+        
+    </script>
+
+</html>

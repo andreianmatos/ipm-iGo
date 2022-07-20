@@ -1,0 +1,921 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+
+        <title>Health</title>
+        <link rel = "stylesheet" href = "styleHealth.css">
+        <meta charset="UTF-8">
+
+    </head>
+
+	<body onload="color();sharesave();">	
+
+		<div id="iGoWrapper">
+	        <img src="bracelet.png" id="bracelet" >
+
+	        <button class= "btn" id = "lockbutton" onclick = "lock();"></button>
+          <button class="btn" id = "backbutton" onclick = "goHome();"></button>
+
+			<div id = "iGobox">
+
+				<div id = "lockscreen" onclick="lock()">
+                </div>
+
+            <div id="sharePOP" class="sharePOP">
+                    <img src = "close.png" id="close" onclick="closeShareAct();">
+                    <div id="innerShare">
+                    A sua actividade est&aacute; a ser partilhada em direto na MyWeb.<span style="font-size: 15pt"><br>&check;</span>
+                        
+                    </div>
+                </div>
+
+                <div id="unsharePOP" class="sharePOP">
+                    <img src = "close.png" id="close" onclick="closeUnShareAct();">
+                    <div id="innerShare">
+                    A sua partilha de actividade em direto na MyWeb foi cancelada.<span style="font-size: 15pt"><br>X</span>
+                        
+                    </div>
+                
+                </div>
+
+            <div id = "startActivity">
+                
+
+                <p><span id="activitytime">00:00:00</span></p>
+
+               <p> <img src="footsteps.jpg" width=26 id="footsteps" > </p>
+                <p><span id="kmcount"></span><span id="km"><b>KM</b></span></p>
+                <p><span id="footstepscount"></span></p>
+
+                 <button onclick="endActivity()" id="button2">Finalizar Atividade</button>
+
+                  <span id = "share" onclick="share();"> 
+                    <img src="share.png" width=18>
+                  </span>   
+
+            </div>
+                
+                <div id = "fitscorpopup">
+                
+                <img src = "close.png" id="close" onclick="closeScores();">
+                <div id = "myWebtitle"> <b>MyWeb</b> </div> 
+                <div id = "scoretitle"> <b>  Fitness Scoring </b></div>
+
+                  <div class="table-wrapper-scroll-y my-custom-scrollbar">
+
+                  <table class="table1" id="table1">
+                    <thead>
+                      <tr>
+                        <th width="20%" scope="col">#</th>
+                        <th width="40%"scope="col"> @</th>
+                        <th width="40%"scope="col"> KM</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>32</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">2</th>
+                        <td><b>EU</b></td>
+                        <td><b>27</b></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">3</th>
+                        <td>Marta</td>
+                        <td>26</td>
+                         </tr>
+                      <tr>
+                        <th scope="row">4</th>
+                        <td>Filippe</td>
+                        <td>23</td>
+                         </tr>
+                      <tr>
+                        <th scope="row">5</th>
+                        <td>Joana</td>
+                        <td>22</td>
+                        </tr>
+                      <tr>
+                        <th scope="row">6</th>
+                        <td>Helena</td>
+                        <td>19</td>
+                         </tr>
+                    <tr>
+                        <th scope="row">7</th>
+                        <td>Luis</td>
+                        <td>18</td>
+                         </tr>
+                      <tr>
+                        <th scope="row">8</th>
+                        <td>Martim</td>
+                        <td>16</td>
+                        </tr>
+                      <tr>
+                        <th scope="row">9</th>
+                        <td>Jacob</td>
+                        <td>13</td>
+                         </tr>
+                         <th scope="row">10</th>
+                        <td>Giovanni</td>
+                        <td>11</td>
+
+                    </tbody>
+                  </table>
+
+                   <table class="table2" id="table2">
+                    <thead>
+                      <tr>
+                        <th width="20%" scope="col">#</th>
+                        <th width="40%"scope="col"> @</th>
+                        <th width="40%"scope="col"> h:m:s</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>8:12:27</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">2</th>
+                        <td>Mariza</td>
+                        <td>6:56:45</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">3</th>
+                        <td>Kalvin</td>
+                        <td>5:32:11</td>
+                         </tr>
+                      <tr>
+                        <th scope="row">4</th>
+                        <td>Stefan</td>
+                        <td>4:28:09</td>
+                         </tr>
+                      <tr>
+                        <th scope="row">5</th>
+                        <td>Catia</td>
+                        <td>3:34:49</td>
+                        </tr>
+                      <tr>
+                        <th scope="row">6</th>
+                        <td><b>EU</b></td>
+                        <td>3:32:23</td>
+                         </tr>
+                    <tr>
+                        <th scope="row">7</th>
+                        <td>Luis</td>
+                        <td>1:18:57</td>
+                         </tr>
+                      <tr>
+                        <th scope="row">8</th>
+                        <td>Miguel</td>
+                        <td>1:54:23</td>
+                        </tr>
+                      <tr>
+                        <th scope="row">9</th>
+                        <td>Joana</td>
+                        <td>1:42:21</td>
+                         </tr>
+                        <tr>
+                         <th scope="row">10</th>
+                        <td>Maria</td>
+                        <td>1:42:17</td>
+                         </tr>
+                    </tbody>
+                  </table>
+
+                   <table class="table3" id="table3">
+                    <thead>
+                      <tr>
+                        <th width="20%" scope="col">#</th>
+                        <th width="40%"scope="col"> @</th>
+                        <th width="40%"scope="col"> /sem</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">1</th>
+                        <td>Filippe</td>
+                        <td>24</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">2</th>
+                        <td>Jacob</td>
+                        <td>21</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">3</th>
+                        <td>Miguel</td>
+                        <td>19</td>
+                         </tr>
+                      <tr>
+                        <th scope="row">4</th>
+                        <td>Luisa</td>
+                        <td>17</td>
+                         </tr>
+                      <tr>
+                        <th scope="row">5</th>
+                        <td>Natasha</td>
+                        <td>16</td>
+                        </tr>
+                      <tr>
+                        <th scope="row">6</th>
+                        <td>Larry</td>
+                        <td>12</td>
+                         </tr>
+                    <tr>
+                        <th scope="row">7</th>
+                        <td>Mark</td>
+                        <td>8</td>
+                         </tr>
+                      <tr>
+                        <th scope="row">8</th>
+                        <td>Anna</td>
+                        <td>7</td>
+                        </tr>
+                      <tr>
+                        <th scope="row">9</th>
+                        <td><b>EU</b></td>
+                        <td><b>6</b></td>
+                         </tr>
+                        <tr>
+                         <th scope="row">10</th>
+                        <td>Giovanni</td>
+                        <td>5</td>
+                         </tr>
+                    </tbody>
+                  </table>
+                   
+                </div>
+
+                <div id="arrowbutton" onclick="next();">
+                    <b> <div id = "arrowsymbol"> &gt; </div></b>
+                    </div>
+
+                <div id="arrowbutton2" onclick="back();">
+                    <b><div id = "arrowsymbol"> &lt; </div></b>
+                    </div>
+
+
+            </div>
+
+             <div id = "fitachpopup">
+
+             	<img src = "close.png" id="close" onclick="closeAch();">
+
+             	<div id = "myWebtitle"> <b>MyWeb</b> </div> 
+                <div id = "scoretitle"> <b> Achievements </b></div>
+                
+                <img src = "circle.png" id="c1" width="50" >
+                <img src = "circle.png" id="c2" width="50">
+                <img src = "circle.png" id="c3" width="50">
+                <img src = "circle.png" id="c4" width="50">
+                <img src = "circle.png" id="c5" width="50">
+                 
+                 <img src = "distance.png" id="i1" width="35" >
+                <img src = "speed.png" id="i2" width="35">
+                <img src = "time.png" id="i3" width="35">
+                <img src = "bird.png" id="i4" width="35">
+                <img src = "owl.png" id="i5" width="35">
+                 
+                 <div id="goalhelp" onclick="opengoaldefs();">?</div>
+                 
+                 <div id="goaldefs">
+                     <img src = "close.png" id="close" onclick="closedefs();">
+                     <br><br>
+                    <img src = "distance.png"  width="20" > - percorreu mais de 15km
+                    <img src = "speed.png"  width="20"> - atingiu  os 10 km/h<br>
+                    <img src = "time.png"  width="20"> - atividade superior a 3h
+                    <img src = "bird.png"  width="20"> - atividade antes das 6h
+                    <img src = "owl.png"  width="20"> - atividade depois das 20h
+                 
+                 </div>
+                   
+             </div>
+
+                <div class="mask" id="fitmask">
+                    <div id="helpFit">
+                        <img src = "close.png" id="close" onclick="closeFitHelp();">
+                      <span id="achive1"><br><br><br>&larr;conquistas</span><span id="achive2"><br>&uarr;ranking</span>
+                      
+                      <span id="bottomText"><br><br><br><br><br>Carregue no bot&atilde;o para iniciar corrida ou caminhada!</span>
+                    </div>
+                </div>
+
+				<div id = "main">
+
+                  <div class="tab">
+                    <button class="tablinks" onclick="openTab(event, 'Saude')" id="defaultOpen">Sa&uacute;de</button>
+                    <button class="tablinks" onclick="openTab(event, 'Fitness')">Fitness</button> 
+            
+                  </div>
+
+                  <div id="Saude" class="tabcontent" style="display:none">
+                      
+                    <div id = "healthHelp">
+                        <img src = "close.png" id="close" onclick="closeHHelp();">
+                        <br><br><br>&uarr; escolha a medi&ccedil;&atilde;o<br><br>&emsp;&emsp;[RESULTADO]
+                        <br><br>&emsp;valores &searr; &emsp;&emsp;
+                        <br> &emsp;&emsp;&emsp;&emsp;partilhar &rarr;
+                         
+                        
+                      </div>
+                      
+                    <div id="shareHealth">
+                      <img src = "close.png" id="close" onclick="closePOPhealth();">
+                        <div id="innerShareH">
+                        A sua medi&ccedil;&atilde;o foi partilhada na MyWeb.<span style="font-size: 15pt"><br>&check;</span>
+                        </div>
+                      </div>
+
+                      <div id="infoHealth">
+                      <img src = "close.png" id="close" onclick="closePOPIH();">
+                        <div id="innerInfoH" style="font-size: 10pt">
+                       		<b>Valores Referência
+                       		 Adulto Saudável </b>
+							<p><b>BPM</b> 75 - 95 </p>
+							<p><b>GLICOSE</b> 75 - 140 </p>
+							<p><b>TENSAO</b>  100 - 120 </p>
+                        </div>
+                      </div>
+
+                      <div id = "measuringPOP">
+                      <img src = "833.gif" width = "35px" height = "35px">
+                      </div>
+                      
+                    <span id = "info" onclick="showHHelp();"> 
+                        <b>?</b>
+                    </span> 
+                    <div id="arrow" onclick="dropdown();">V</div>
+                    <div id="dropdown">
+                      <div id="droptop" onclick="dropdown();">BPM</div>
+                      <div id="dropoptions">
+                          <div class="opt" id="opt1" onclick="choose1();">Glicose</div>
+                          <div class="opt" id="opt2" onclick="choose2();">Tens&atilde;o</div>
+                        </div>
+                    </div>
+                      <div id="value"><span style='color: green;'>75</span></div>
+                      <div id ="units">BPM</div> 
+                    <div id = "shareH" onclick="sharePOPH();"> 
+                         <img src="share.png" width=16>
+                    </div> 
+                     <div id = "infoH" onclick="sharePOPIH();"> 
+                        <div id ="ref"><b>REF</b></div> 
+                    </div> 
+                    <div id ="glicERR">
+                    <div id = "innerERR">
+                      Ocorreu um erro na medi&ccedil;&atilde;o. Por favor clique no bot&atilde;o para reconectar ao sensor. 
+                      <button onclick="closeERR();">  <img src="reload.png" width=16> </button>
+                        </div>
+                    </div> 
+
+                  </div>
+
+                  <div id="Fitness" class="tabcontent" style="display:none">
+
+                    <span id = "fitflag" onclick="openScores();" >
+                      <img src="rank.png" width=23> 
+                    </span>
+
+                    <span id = "fitachiev" onclick="openAchievements();" >
+                      <img src="ach.png" width=20> 
+                    </span>  
+
+                    <span id = "info" onclick="fitnessHelp();"> 
+                        <b>?</b>
+                    </span>     
+                    
+                    <button id = "startActivitybutton" onclick="startActivity()" class="button">Iniciar Atividade</button>
+
+                  </div>
+
+                </div>
+
+					
+			</div>
+
+		</div>
+
+	</body>
+
+    <script>
+    
+        if(sessionStorage.getItem("running")){
+            var activity_running = parseInt(sessionStorage.getItem("running"));
+        }
+        else {
+            var activity_running = 0;
+        }
+        
+        var activityStatus;
+        
+        function sharesave(){
+            if (sessionStorage.getItem("shareStatus")){
+                activityStatus = sessionStorage.getItem("shareStatus");
+                if (activityStatus=="shared"){
+                    document.getElementById("share").style.backgroundColor="#8b0000";
+                }
+            }
+            else{
+                activityStatus = "unshared";
+            }
+        }
+        
+        var theme;
+        
+        function color(){
+            theme = sessionStorage.getItem("contrast");
+            if (theme==0){
+                document.getElementById("main").style.backgroundColor="black";
+                 document.getElementById("startActivity").style.backgroundColor="black";
+                 document.getElementById("measuringPOP").style.backgroundColor="black";
+                 document.getElementById("fitscorpopup").style.backgroundColor="black";
+                
+                document.getElementById("fitachpopup").style.backgroundColor="black";
+            }
+            else{
+                document.getElementById("main").style.backgroundColor="#e2c8b3";
+                 document.getElementById("startActivity").style.backgroundColor="#e2c8b3";
+                 document.getElementById("measuringPOP").style.backgroundColor="#e2c8b3";
+                 document.getElementById("fitscorpopup").style.backgroundColor="#e2c8b3";
+                
+                document.getElementById("fitachpopup").style.backgroundColor="#e2c8b3";
+            }
+        }
+        
+        
+        function lock(){
+            var lockscreen = document.getElementById("lockscreen");
+            if(lockscreen.style.display=="none"){
+                lockscreen.style.display="block";
+                closeAllpopUPS();
+            }
+            else{
+                lockscreen.style.display="none";
+            }
+        }
+
+        function openTab(evt, tabName) {
+          var i, tabcontent, tablinks;
+
+          tabcontent = document.getElementsByClassName("tabcontent");
+          for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            
+          }
+
+          tablinks = document.getElementsByClassName("tablinks");
+          for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+          }
+          document.getElementById("startActivity").style.display="none";
+          if( !activity_running && tabName=='Fitness') {
+            document.getElementById(tabName).style.display = "block";
+            document.getElementById("startActivitybutton").style.display = "block";
+
+            evt.currentTarget.className += " active";
+          }
+          else if( activity_running && tabName=='Fitness') {
+            document.getElementById(tabName).style.display = "block";
+            startActivity();
+            evt.currentTarget.className += " active";
+          }
+          else if(tabName=='Saude') {
+              document.getElementById(tabName).style.display = "block";
+              evt.currentTarget.className += " active";
+              readBPM();
+              document.getElementById("dropoptions").style.display="none";
+              document.getElementById("droptop").style.borderRadius = "15px";
+          }
+        }
+
+        document.getElementById("defaultOpen").click();
+
+
+        function startActivity(){
+            document.getElementById("startActivity").style.display="block";
+          activity_running = 1;
+            sessionStorage.setItem('running',activity_running)  ;       
+             timer();
+        }
+
+        var stopwatch;
+
+        function timer(){           
+            document.getElementById("activitytime").innerHTML="--:--:--";
+            document.getElementById("footstepscount").innerHTML="-";
+            document.getElementById("kmcount").innerHTML="-";
+            var sec = 0;
+            var min = 0;
+            var hor = 0;
+            var counterfootspteps = 0;
+            var counterkm = 0;
+            var time = document.getElementById("activitytime");
+            if(sessionStorage.getItem("nrfootsteps")) {
+                counterfootspteps = parseInt(sessionStorage.getItem("nrfootsteps"));
+            }
+            else {
+                counterfootspteps = 0;
+            }
+            if(sessionStorage.getItem("nrkms")) {
+                counterkm = parseInt(sessionStorage.getItem("nrkms"));
+            }
+            else {
+                counterkm = 0;
+            }
+             if(sessionStorage.getItem("nrmin")) {
+                min = parseInt(sessionStorage.getItem("nrmin"));
+            }
+            else {
+                min = 0;
+            }
+             if(sessionStorage.getItem("nrsec")) {
+                sec = parseInt(sessionStorage.getItem("nrsec"));
+            }
+            else {
+                sec = 0;
+            }
+            if(sessionStorage.getItem("nrhor")) {
+                hor = parseInt(sessionStorage.getItem("nrhor"));
+            }
+            else {
+                hor = 0;
+            }
+            stopwatch = setInterval(function count(){
+                sec++;
+                counterfootspteps+=3;
+                if (sec>=60){
+                    sec = 0;
+                    min++
+                }
+                if (min>=60){
+                    min = 0;
+                    hor++
+                }
+                if(counterfootspteps == 1000){
+                    counterfootspteps = 0;
+                    counterkm++;
+                }
+
+                footstepscount.innerHTML = counterfootspteps;
+                kmcount.innerHTML = counterkm;
+
+                sessionStorage.setItem('nrfootsteps', counterfootspteps);
+                sessionStorage.setItem('nrkms', counterkm);
+                sessionStorage.setItem('nrmin', min);
+                sessionStorage.setItem('nrsec', sec);
+                sessionStorage.setItem('nrhor', hor);
+
+                if(sec<10 && min<10 && hor < 10){
+                    time.innerHTML="0" + hor +":" +"0"+min+":0"+sec;
+                }
+                else if(sec>=10 && min<10 && hor < 10){
+                    time.innerHTML="0" + hor +":" +"0"+min+":"+sec;
+                }
+                else if(sec<10 && min>=10 && hor < 10){
+                    time.innerHTML="0" + hor +":"+min+":0"+sec;
+                }
+                else{
+                    time.innerHTML="0" + hor +":"+min+":"+sec;
+                }
+                
+            },1000)
+        }
+
+        function endActivity(){
+            clearInterval(stopwatch);
+            document.getElementById("share").style.backgroundColor="green";
+            activityStatus = "unshared";
+            activity_running = 0;
+            sessionStorage.removeItem('nrfootsteps');
+            sessionStorage.removeItem('nrkms');
+            sessionStorage.removeItem('nrmin');
+            sessionStorage.removeItem('nrsec');
+            sessionStorage.removeItem('nrhor');
+            sessionStorage.removeItem("activity_running");
+            sessionStorage.setItem('running',activity_running);
+            document.getElementById("startActivity").style.display="none";
+            document.getElementById("continueActivitybutton").style.display="none";
+            document.getElementById("startActivitybutton").style.display="block";
+            document.getElementById("share").style.backgroundColor="green";
+            activityStatus = "unshared";
+        }
+        
+        function fitnessHelp(){
+            document.getElementById("fitmask").style.display="block";
+        }
+        
+        function closeFitHelp(){
+            document.getElementById("fitmask").style.display="none";
+        }
+        
+        function goHome(){
+            sessionStorage.setItem("shareStatus",activityStatus);
+            window.open("index.html","_self");
+        }
+        
+        
+        function share(){
+            if (activityStatus=="shared"){
+                unshare();
+            }
+            else{
+                 activityStatus = "shared";
+            document.getElementById("sharePOP").style.display="block";
+            }
+        }
+        
+        function unshare(){
+           
+           activityStatus="unshared";
+            document.getElementById("unsharePOP").style.display="block";
+        }
+        
+        function closeUnShareAct(){
+            document.getElementById("unsharePOP").style.display="none";
+            document.getElementById("share").style.backgroundColor="green"; 
+        }
+        
+        function closeShareAct(){
+            document.getElementById("sharePOP").style.display="none";
+            document.getElementById("share").style.backgroundColor="#8b0000";
+        }
+        
+        function dropdown(){
+            if (document.getElementById("dropoptions").style.display=="none"){
+              document.getElementById("droptop").style.borderRadius = "15px 15px 0px 0px"; 
+                document.getElementById("dropoptions").style.display="block";
+            }
+            else{
+                document.getElementById("dropoptions").style.display="none";
+                document.getElementById("droptop").style.borderRadius = "15px"; 
+            }
+        }
+        
+        function readBPM(){
+            dropdown();
+
+            var top = document.getElementById("droptop");
+            var one = document.getElementById("opt1");
+            var two = document.getElementById("opt2");
+            top.innerHTML="BPM";
+
+            var bpm = Math.round(Math.random()*65);
+            bpm += 50;
+
+            measuring();
+
+            if(bpm < 60 || bpm > 105){
+                document.getElementById("value").innerHTML = bpm;
+                document.getElementById("value").style.backgroundColor="red"; 
+                document.getElementById("value").style.boxShadow="0 0 5px 5px red";
+            } 
+            else if (bpm <= 75 || bpm >= 95){
+                document.getElementById("value").innerHTML = bpm;
+                document.getElementById("value").style.backgroundColor="yellow";
+                document.getElementById("value").style.boxShadow="0 0 5px 5px yellow"; 
+            }
+            else {
+                document.getElementById("value").innerHTML = bpm;
+                document.getElementById("value").style.backgroundColor="green";
+                document.getElementById("value").style.boxShadow="0 0 5px 5px green"; 
+            }
+
+            document.getElementById("units").innerHTML = "BPM";
+            one.innerHTML="Glicose";
+            two.innerHTML="Tens&atilde;o";   
+        }
+        
+        function readGLIC(){
+            dropdown();
+            measuring();
+            var top = document.getElementById("droptop");
+            var one = document.getElementById("opt1");
+            var two = document.getElementById("opt2");
+            top.innerHTML="Glicose";
+            document.getElementById("glicERR").style.display = "none";
+
+            var error = Math.round(Math.random()*2);
+
+
+            var glic = Math.round(Math.random()*60);
+            glic += 60;
+
+
+            if(glic < 70 || glic > 110){
+                document.getElementById("value").innerHTML = glic;
+                document.getElementById("value").style.backgroundColor="red";
+                document.getElementById("value").style.boxShadow="0 0 5px 5px red"; 
+
+            } 
+            else if (glic <= 75 || glic >= 105){
+                document.getElementById("value").innerHTML = glic;
+                document.getElementById("value").style.backgroundColor="yellow";
+                document.getElementById("value").style.boxShadow="0 0 5px 5px yellow"; 
+            }
+            else {
+                document.getElementById("value").innerHTML = glic;
+                document.getElementById("value").style.backgroundColor="green";
+                document.getElementById("value").style.boxShadow="0 0 5px 5px green"; 
+            }
+
+
+            document.getElementById("units").innerHTML = "mg/dL";
+            one.innerHTML="BPM";
+            two.innerHTML="Tens&atilde;o"; 
+            if(error == 1){
+              glicError();
+            }
+        }
+        
+        function readTEN(){
+            dropdown();
+            var top = document.getElementById("droptop");
+            var one = document.getElementById("opt1");
+            var two = document.getElementById("opt2");
+            top.innerHTML="Tens&atilde;o";
+
+
+            var tensao = Math.round(Math.random()*50);
+            var sistolica;
+
+            tensao += 90;
+
+            measuring();
+
+            if(tensao > 130 || tensao < 90){
+                sistolica = Math.round(Math.random()*20);
+                sistolica += 80;
+                document.getElementById("value").innerHTML = tensao + "/" + sistolica;
+                document.getElementById("value").style.backgroundColor="red";
+                document.getElementById("value").style.boxShadow="0 0 5px 5px red"; 
+            } 
+            else if ((tensao <= 130 && tensao >= 120) && (tensao <= 100 && tensao >= 90) ){
+                sistolica = Math.round(Math.random()*20);
+                sistolica += 59;
+                document.getElementById("value").innerHTML = tensao + "/" + sistolica;
+                document.getElementById("value").style.backgroundColor="yellow";
+                document.getElementById("value").style.boxShadow="0 0 5px 5px yellow";
+            }
+            else {
+                sistolica = Math.round(Math.random()*30);
+                sistolica += 49;
+                document.getElementById("value").innerHTML = tensao + "/" + sistolica;
+                document.getElementById("value").style.backgroundColor="green";
+                document.getElementById("value").style.boxShadow="0 0 5px 5px green";
+            }
+
+
+            document.getElementById("units").innerHTML = "mmHg";
+
+            one.innerHTML="BPM";
+            two.innerHTML="Glicose";   
+        }
+        
+        function choose1(){
+            var one = document.getElementById("opt1");
+            if(one.innerHTML=="BPM"){
+                readBPM();
+            }
+            else if (one.innerHTML=="Glicose"){
+                readGLIC();
+            }
+            else{
+                readTEN();
+            } 
+        }
+        
+        function choose2(){
+            var two = document.getElementById("opt2");
+            if(two.innerHTML=="BPM"){
+                readBPM();
+            }
+            else if (two.innerHTML=="Glicose"){
+                readGLIC();
+            }
+            else{
+                readTEN();
+            } 
+        }
+        
+        function sharePOPH(){
+            document.getElementById("shareHealth").style.display="block";
+        }
+
+        function sharePOPIH(){
+            document.getElementById("infoHealth").style.display="block";
+        }
+        
+        function closePOPhealth(){
+            document.getElementById("shareHealth").style.display="none";
+        }
+
+        function closePOPIH(){
+            document.getElementById("infoHealth").style.display="none";
+        }
+        
+        
+        function showHHelp(){
+             document.getElementById("healthHelp").style.display="block";
+        }
+        
+        function closeHHelp(){
+            document.getElementById("healthHelp").style.display="none";
+        }
+        
+        function openScores(){
+            document.getElementById("fitscorpopup").style.display="block";
+        }
+
+         function openAchievements(){
+            document.getElementById("fitachpopup").style.display="block";
+        }
+
+
+        function closeScores(){
+            document.getElementById("fitscorpopup").style.display="none";
+        }
+         function closeAch(){
+            document.getElementById("fitachpopup").style.display="none";
+        }
+
+
+         var arrowed = 0;
+
+        function next(){
+
+            if(!arrowed) {
+                document.getElementById("table1").style.display="none";
+                document.getElementById("table2").style.display="block";
+                document.getElementById("arrowbutton2").style.display="block";
+                document.getElementById("arrowbutton").style.display="block";
+                arrowed = 1;
+            }
+            else if(arrowed) {
+                document.getElementById("table1").style.display="none";
+                document.getElementById("table2").style.display="none";
+                document.getElementById("table3").style.display="block";
+                document.getElementById("arrowbutton").style.display="none";
+                arrowed = 2;
+            }
+        }
+
+        function back(){
+
+            if(arrowed===1) {
+                document.getElementById("table1").style.display="block";
+                document.getElementById("table2").style.display="none";
+                document.getElementById("arrowbutton").style.display="block";
+                document.getElementById("arrowbutton2").style.display="none";
+                arrowed = 0;
+            }
+            else if(arrowed===2) {
+                document.getElementById("table1").style.display="none";
+                document.getElementById("table2").style.display="block";
+                document.getElementById("table3").style.display="none";
+                document.getElementById("arrowbutton").style.display="block";
+                arrowed = 1;
+            }
+        }
+
+    function measuring(){
+      document.getElementById("measuringPOP").style.display = "block";
+      setTimeout("closePOP()", 1500);
+    }
+
+
+    function closePOP(){
+      document.getElementById("measuringPOP").style.display = "none";
+    }
+
+    function glicError(){
+          document.getElementById("measuringPOP").style.display = "block";
+          setTimeout("openERR()", 1500);
+    }
+
+    function openERR(){
+      document.getElementById("glicERR").style.display = "block"; 
+    }
+
+    function closeERR(){
+      document.getElementById("glicERR").style.display = "none";
+      document.getElementById("value").style.backgroundColor="red"; 
+      readGLIC();
+      document.getElementById("dropoptions").style.display="none";
+      document.getElementById("droptop").style.borderRadius = "15px"; 
+    }
+        
+    function opengoaldefs(){
+        document.getElementById("goaldefs").style.display = "block";
+    }
+    
+    function closedefs(){
+         document.getElementById("goaldefs").style.display = "none";
+    }
+        
+    </script>
+
+</html>
